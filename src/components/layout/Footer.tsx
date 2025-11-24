@@ -1,10 +1,19 @@
+'use client';
+
 import Link from 'next/link';
 import { Logo } from '../Logo';
 import { footerLinks, socialLinks } from '@/lib/data';
 import { Button } from '../ui/button';
 import { Input } from '../ui/input';
+import { useEffect, useState } from 'react';
 
 export function Footer() {
+  const [year, setYear] = useState(new Date().getFullYear());
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
+
   return (
     <footer className="bg-secondary/50">
       <div className="container py-12 lg:py-16">
@@ -63,7 +72,7 @@ export function Footer() {
       <div className="border-t">
         <div className="container flex flex-col items-center justify-between py-6 text-sm md:flex-row">
           <p className="text-muted-foreground">
-            © {new Date().getFullYear()} InsightEdge | Connecting Theory and Practice 🧠
+            © {year} InsightEdge | Connecting Theory and Practice 🧠
           </p>
         </div>
       </div>
