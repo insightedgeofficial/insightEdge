@@ -36,40 +36,40 @@ export const valueBlocks: ValueBlock[] = [
 
 export const services: Service[] = [
   {
-    title: 'Workshops & Training',
-    text: 'Interactive, research-backed workshops for schools, universities, corporates, and educators.',
-    cta: 'Explore Workshops',
+    title: 'Universities and Colleges',
+    text: 'Panel Discussions, Skill-Based Workshops, Conferences, and more.',
+    cta: 'Explore University Services',
+    href: '/services#universities',
+  },
+  {
+    title: 'Rehab Centers',
+    text: 'Addiction and Recovery Workshops, Therapeutic Techniques, and Staff Burnout Prevention.',
+    cta: 'Explore Rehab Services',
+    href: '/services#rehab-centers',
+  },
+  {
+    title: 'NGOs',
+    text: 'Field Research Training, Volunteer Training, and Advocacy Training.',
+    cta: 'Explore NGO Services',
+    href: '/services#ngos',
+  },
+  {
+    title: 'Schools',
+    text: 'Introductory Psychology Workshops, Mental Health Awareness, and Career Exploration.',
+    cta: 'Explore School Services',
     href: '/services#schools',
   },
   {
-    title: 'Study Abroad Consulting',
+    title: 'Corporate Settings',
+    text: 'Burnout Assessment, Mindfulness Programs, Resilience Training, and more.',
+    cta: 'Explore Corporate Services',
+    href: '/services#corporate-wellbeing',
+  },
+  {
+    title: 'Study Abroad',
     text: 'Guidance on programs, SOPs, and applications tailored for psychology pathways.',
     cta: 'Explore Consulting',
     href: '/services#study-abroad',
-  },
-  {
-    title: 'Statistical Services',
-    text: 'End-to-end stats support: design, analysis, visualisation, and reporting.',
-    cta: 'Get Statistics Help',
-    href: '/services#research-evaluation',
-  },
-  {
-    title: 'Clinical Internships',
-    text: 'Real-life observation, simulations, and debriefs combined with focused theoretical training.',
-    cta: 'View Details',
-    href: '/services',
-  },
-  {
-    title: 'Practitioner Modules',
-    text: 'Targeted modules for practitioners in rehab centres, special education schools, and NGOs.',
-    cta: 'Explore Modules',
-    href: '/services#practitioners',
-  },
-  {
-    title: 'Research Training',
-    text: 'Deep-dive training in methods, tools, ethics, and publication workflow.',
-    cta: 'Start Training',
-    href: '/services#research-evaluation',
   },
 ];
 
@@ -126,15 +126,15 @@ export const testimonials: Testimonial[] = [
 export const founders: Founder[] = [
   {
     name: 'Priyanka Surana',
-    title: 'Psychologist, Program Designer & Co-Founder',
+    title: 'Co-founder',
     bio: 'A flower mistaken for a cactus, Priyanka Surana is a gold medalist currently pursuing her Master’s in Counseling Psychology at the Indian Institute of Psychology. With a deep passion for understanding the human mind, she brings a unique blend of expertise and curiosity to her work, shaping innovative approaches to mental health education.',
     image: 'founder-priyanka',
     linkedin: 'https://www.linkedin.com/in/priyanka-suranaaaa?utm_source=share_via&utm_content=profile&utm_medium=member_ios'
   },
   {
     name: 'Lakshmi Rajesh',
-    title: 'Psychologist, Workshop Lead & Co-Founder',
-    bio: 'Driven by a profound interest in human behavior, Lakshmi Rajesh is actively engaged in advanced research on youth mental health & maladaptive behavior. As she prepares to embark on a PhD journey, her work challenges conventional boundaries, striving to offer new perspectives on psychological research and practice.',
+    title: 'Co-founder',
+    bio: 'Driven by a profound interest in human behavior, Lakshmi Rajesh is actively engaged in advanced research on mental health and maladaptive behavior. As she prepares to embark on a PhD journey, her work challenges conventional boundaries, striving to offer new perspectives on psychological research and practice.',
     image: 'founder-lakshmi',
     linkedin: 'https://www.linkedin.com/in/lakshmi-rajesh-0a507124b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app'
   },
@@ -199,12 +199,12 @@ export const fullServices: FullService[] = [
       category: 'Schools',
       overview: 'Our school-based programs build socio-emotional and life skills in students, and empower educators with psychological tools to create emotionally safe learning environments.',
       outcomes: [
-        'Improved emotional regulation and resilience among students',
-        'Enhanced communication and classroom wellbeing',
-        'Teacher self-awareness and reflective teaching practices'
+        'Introductory Psychology Workshops',
+        'Mental Health Awareness Programs',
+        'Career Exploration in Psychology'
       ],
       audience: 'Students (Grades 6–12), Teachers, School Counselors',
-      format: 'Workshops / Modules / Ongoing support model',
+      format: 'Workshops / Modules / Awareness Programs',
       duration: '1-day to multi-week series',
       pricing: 'Per workshop or per-term package',
       cta: 'Request a School Proposal',
@@ -214,10 +214,15 @@ export const fullServices: FullService[] = [
       category: 'Universities',
       overview: 'Our university programs bridge psychological theory with real-world application. Designed for undergraduate and postgraduate psychology and allied health science students, our workshops build essential skills in therapeutic communication, facilitation, research design, and career readiness.',
       outcomes: [
-        'Stronger grasp of clinical and counselling skills',
-        'Hands-on training in assessment, interviewing, and reflective practice',
-        'Enhanced academic-to-professional transition skills',
-        'Clarity on higher education, careers, and supervised pathways in psychology'
+        'Panel Discussions',
+        'Skill-Based Workshops',
+        'Conferences',
+        'Graduate School Preparation',
+        'Simulation (Roleplay) Sessions for Therapeutic Techniques',
+        'Research and Academic Support',
+        'Soft Skills and Communication Training',
+        'Mental Health Awareness and Advocacy Campaigns',
+        'Professional Development and Networking Events'
       ],
       audience: 'UG & PG Psychology Students, Allied Health Sciences students, University Departments, Psychology Clubs, Intern Coordinators',
       format: 'Skill-building workshops / Semester-linked modules / Guest lectures / Career & higher education clinics',
@@ -227,12 +232,12 @@ export const fullServices: FullService[] = [
       ctaLink: '/contact'
     },
     {
-        category: 'Capacity Building',
+        category: 'Rehab Centers',
         overview: 'We equip facilitators, psychologists, and educators with frameworks and skills to design and deliver evidence-based psychoeducational and wellbeing programs.',
         outcomes: [
-            'Strengthened facilitation and group process skills',
-            'Exposure to arts-based and experiential methods',
-            'Frameworks for contextual program design'
+            'Addiction and Recovery Workshops',
+            'Therapeutic Techniques for Recovery Support',
+            'Burnout Prevention for Staff'
         ],
         audience: 'Facilitators, Trainers, Mental Health Professionals, Educators',
         format: 'Intensive workshops / Hybrid modules / Certification pathways',
@@ -242,14 +247,13 @@ export const fullServices: FullService[] = [
         ctaLink: '/contact'
     },
     {
-        category: 'Research & Evaluation',
+        category: 'NGOs',
         overview: 'We collaborate with organizations and institutions to design, evaluate, and document psychological interventions using robust, context-sensitive frameworks. We also support students, researchers, and institutions with end-to-end statistical services and skill-building in research methodology.',
         outcomes: [
-            'Evidence-informed program design',
-            'Evaluation reports using qualitative and implementation research tools',
-            'Data cleaning, quantitative & qualitative analysis, and interpretation',
-            'APA-style reporting and high-quality visualisations',
-            'Hands-on training in research methods and analysis software'
+            'Field Research and Data Collection Training',
+            'Volunteer Training Programs',
+            'Support Group Facilitation Skill Training',
+            'Advocacy Training for Mental Health Activists'
         ],
         audience: 'NGOs, Research Institutions, CSR Units, Policy Programs, Students, Scholars, Faculty',
         format: 'Collaborative research projects / Consultancy model / Training modules',
@@ -262,9 +266,17 @@ export const fullServices: FullService[] = [
         category: 'Corporate Wellbeing',
         overview: 'We partner with organizations to design bespoke wellbeing and development programs that foster psychological safety, leadership growth, and emotional resilience at work.',
         outcomes: [
-            'Improved team communication and collaboration',
-            'Enhanced emotional intelligence and stress management',
-            'Sustainable wellbeing culture through experiential learning'
+            'Burnout & Attrition Risk Assessment',
+            'Mindfulness-Based Stress Reduction (MBSR) Programs',
+            'Resilience and Coping Skills Training',
+            'Mental Health Metrics Reports',
+            'Job Role-Personality Fit Assessment',
+            'Psychological Tools for Performance Reviews',
+            'Conflict Resolution & Mediation Skills',
+            'Referral Systems for External Therapy & Mental Health Services',
+            'Expressive Arts-Based Wellbeing Retreats',
+            'Vision-Boarding & Career Identity Workshops',
+            'Strengths-Based Team Mapping and Exercises'
         ],
         audience: 'Corporate teams, HR and L&D departments, Leadership cohorts',
         format: 'Workshops / Retreats / Ongoing wellbeing programs',
@@ -289,21 +301,6 @@ export const fullServices: FullService[] = [
         cta: 'Explore Consulting Options',
         ctaLink: '/contact'
     },
-    {
-        category: 'Practitioners',
-        overview: 'Specialised modules for practitioners working in high-contact environments such as rehabilitation centres, special schools, social work organisations, and community programs.',
-        outcomes: [
-            'Skills for working with neurodiverse and vulnerable populations',
-            'Understanding trauma-informed & queer-affirmative approaches',
-            'Tools for crisis response, documentation, and ethical practice',
-        ],
-        audience: 'Rehab Practitioners, NGO Staff, Special Educators, Social Workers',
-        format: 'Modular training / Capacity-building series / Hands-on workshops',
-        duration: '2–10 session modules',
-        pricing: 'Per module / Institutional partnership',
-        cta: 'Explore Practitioner Modules',
-        ctaLink: '/contact'
-    }
 ];
 
 export const faqs: FAQ[] = [

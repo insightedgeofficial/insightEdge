@@ -10,7 +10,7 @@ import { PageTitle } from "../shared/PageTitle";
 export function MeetFounders() {
   return (
     <SectionWrapper>
-      <PageTitle title="Meet the Minds Behind InsightEdge" subtitle="Founded by psychology graduates, InsightEdge is built on empowering students with guidance, resources, and hands-on learning experiences." className="mb-12"/>
+      <PageTitle title="About the Founders" subtitle="Founded by psychology graduates from Sri Ramachandra Institute of Higher Education and Research, InsightEdge is built on the principles of empowering psychology students. Our goal is to provide guidance, resources, and hands-on learning experiences that support their academic and professional journeys." className="mb-12"/>
       <div className="grid max-w-4xl mx-auto gap-12 md:grid-cols-2">
         {founders.map((founder) => {
           const image = PlaceHolderImages.find(p => p.id === founder.image);
