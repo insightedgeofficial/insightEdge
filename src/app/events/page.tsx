@@ -1,5 +1,6 @@
 import { EventDirectory } from "@/components/events/EventDirectory";
 import { PastEvents } from "@/components/events/PastEvents";
+import { FloatingGallery } from "@/components/events/FloatingGallery";
 import { PageTitle } from "@/components/shared/PageTitle";
 import { SectionWrapper } from "@/components/shared/SectionWrapper";
 import { Button } from "@/components/ui/button";
@@ -24,6 +25,7 @@ export default function EventsPage() {
       </SectionWrapper>
       <EventDirectory />
       <PastEvents />
+      <FloatingGallery />
       <SectionWrapper>
         <div className="text-center bg-primary/10 p-12 rounded-lg">
           <h2 className="text-3xl font-bold font-headline mb-4">Have an idea for a workshop?</h2>

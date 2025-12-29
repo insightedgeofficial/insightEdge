@@ -26,7 +26,7 @@ export function ServiceTabs() {
               </CardHeader>
               <CardContent className="mt-4 grid gap-8 md:grid-cols-2">
                 <div>
-                  <h3 className="font-semibold text-lg mb-4 flex items-center"><Check className="mr-2 h-5 w-5 text-primary"/> Key Outcomes</h3>
+                  <h3 className="font-semibold text-lg mb-4 flex items-center"><Check className="mr-2 h-5 w-5 text-primary"/> What You'll Gain</h3>
                   <ul className="space-y-2 text-muted-foreground">
                     {service.outcomes.map((outcome, i) => (
                       <li key={i} className="flex items-start">

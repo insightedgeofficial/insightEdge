@@ -8,7 +8,7 @@ const contactSchema = z.object({
   phone: z.string().optional(),
   organization: z.string().optional(),
   topic: z.string().min(1, { message: 'Please select a topic.' }),
-  message: z.string().min(10, { message: 'Message must be at least 10 characters.' }),
+  message: z.string().optional(),
 });
 
 export type FormState = {

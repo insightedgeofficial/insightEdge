@@ -42,7 +42,7 @@ export function EventDirectory() {
               </CardContent>
               <CardFooter>
                 <Button asChild variant="outline" className="w-full">
-                  <Link href={event.href}>{event.cta}</Link>
+                  <Link href={event.href}>Get More Details</Link>
                 </Button>
               </CardFooter>
             </Card>

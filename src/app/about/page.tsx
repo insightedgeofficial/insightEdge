@@ -1,19 +1,25 @@
 import { AboutHero } from '@/components/about/AboutHero';
+import { AboutCompany } from '@/components/about/AboutCompany';
+import { AboutUsFlow } from '@/components/about/AboutUsFlow';
 import { OriginStory } from '@/components/about/OriginStory';
-import { SectionWrapper } from '@/components/shared/SectionWrapper';
-import { PageTitle } from '@/components/shared/PageTitle';
 
 export default function AboutPage() {
   return (
-    <div>
-      <AboutHero />
-      <OriginStory />
-      <SectionWrapper className="bg-secondary/30">
-        <PageTitle title="Our Mission" />
-        <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground text-center">
-            We aim to bridge the gap between academic learning and practical application by offering innovative programs, collaborative workshops, and professional development opportunities. Our initiatives are designed to equip psychology students and professionals with diverse skill sets, enabling them to navigate and excel in their careers.
-        </p>
-      </SectionWrapper>
+    <div className="relative">
+      {/* Global grain texture overlay */}
+      <div 
+        className="fixed inset-0 opacity-[0.01] pointer-events-none z-0"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='4' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+        }}
+      />
+      
+      <div className="relative z-10">
+        <AboutHero />
+        <AboutCompany />
+        <AboutUsFlow />
+        <OriginStory />
+      </div>
     </div>
   );
 }

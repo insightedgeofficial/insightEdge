@@ -19,18 +19,27 @@ export type Service = {
 };
 
 export type Event = {
+  id: string;
   title: string;
   date: string;
   location: string;
   cta: string;
   href: string;
   image: string;
+  abstract?: string;
+  agenda?: string[];
+  facilitator?: string;
+  venue?: string;
+  pricing?: string;
+  registrationLink?: string;
+  faqs?: FAQ[];
 };
 
 export type Testimonial = {
   quote: string;
   author: string;
   role: string;
+  image?: string;
 };
 
 export type Founder = {
@@ -57,6 +66,15 @@ export type FAQ = {
 export type Milestone = {
   date: string;
   description: string;
+};
+
+export type PastEvent = {
+  id: string;
+  title: string;
+  date: string;
+  description: string;
+  highlights?: string[];
+  images?: string[];
 };
 
 export type FullService = {

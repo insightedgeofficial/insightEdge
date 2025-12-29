@@ -1,6 +1,7 @@
 'use client';
 
-import { useFormState, useFormStatus } from 'react-dom';
+import { useActionState } from 'react';
+import { useFormStatus } from 'react-dom';
 import { submitContactForm } from './actions';
 import { useEffect } from 'react';
 import { useToast } from '@/hooks/use-toast';
@@ -31,7 +32,7 @@ function SubmitButton() {
 }
 
 export function ContactForm() {
-  const [state, formAction] = useFormState(submitContactForm, { message: null, errors: {} });
+  const [state, formAction] = useActionState(submitContactForm, { message: null, errors: {} });
   const { toast } = useToast();
 
   useEffect(() => {
@@ -81,17 +82,18 @@ export function ContactForm() {
                     <SelectValue placeholder="Select a topic" />
                 </SelectTrigger>
                 <SelectContent>
-                    <SelectItem value="booking">Booking a Workshop</SelectItem>
-                    <SelectItem value="collaboration">Collaboration or Partnership</SelectItem>
-                    <SelectItem value="media">Media / Press Inquiry</SelectItem>
-                    <SelectItem value="general">Support or General Query</SelectItem>
+                    <SelectItem value="workshop-booking">Workshop Booking</SelectItem>
+                    <SelectItem value="corporate-inquiry">Corporate Inquiry</SelectItem>
+                    <SelectItem value="collaboration-partnerships">Collaboration / Partnerships</SelectItem>
+                    <SelectItem value="general-support">General Support</SelectItem>
+                    <SelectItem value="research-evaluation">Research / Evaluation Inquiry</SelectItem>
                 </SelectContent>
             </Select>
             {state.errors?.topic && <p className="text-sm text-destructive">{state.errors.topic[0]}</p>}
           </div>
           <div className="space-y-2">
-            <Label htmlFor="message">Message</Label>
-            <Textarea id="message" name="message" required rows={5} />
+            <Label htmlFor="message">Message (Optional)</Label>
+            <Textarea id="message" name="message" rows={5} placeholder="Tell us more about your inquiry..." />
             {state.errors?.message && <p className="text-sm text-destructive">{state.errors.message[0]}</p>}
           </div>
           <SubmitButton />

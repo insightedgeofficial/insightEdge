@@ -1,23 +1,40 @@
+'use client';
+
 import { SectionWrapper } from "../shared/SectionWrapper";
 import { PageTitle } from "../shared/PageTitle";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { GraduationCap, Users } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { cn } from "@/lib/utils";
 
 export function OriginStory() {
+  const { ref, animationClasses } = useScrollAnimation({
+    threshold: 0.1,
+    animationType: 'fade-up',
+  });
+
   return (
-    <SectionWrapper>
-      <div className="grid items-start gap-16 lg:grid-cols-2">
-        <Card className="border-0 shadow-none bg-transparent">
-            <CardHeader className="p-0">
+    <SectionWrapper className="relative bg-background overflow-hidden !py-20 md:!py-28 lg:!py-32">
+      {/* Grain texture */}
+      <div 
+        className="absolute inset-0 opacity-[0.015] pointer-events-none"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='4' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+        }}
+      />
+
+      <div ref={ref} className={cn("relative grid items-start gap-20 lg:gap-24 lg:grid-cols-2", animationClasses)}>
+        <Card className="border-0 shadow-sm bg-background/50 backdrop-blur-sm">
+            <CardHeader className="p-0 pb-8">
                 <div className="flex items-center gap-4">
-                    <div className="flex-shrink-0 bg-primary/20 text-primary p-3 rounded-lg">
+                    <div className="flex-shrink-0 bg-gradient-to-br from-primary/20 to-primary/10 text-primary p-4 rounded-xl shadow-sm">
                         <GraduationCap className="w-8 h-8" />
                     </div>
                     <PageTitle title="For Psychology Students and Early Graduates" className="text-left mb-0" />
                 </div>
             </CardHeader>
-            <CardContent className="p-0 mt-6">
-                <div className="space-y-4 text-muted-foreground text-lg">
+            <CardContent className="p-0">
+                <div className="space-y-6 text-muted-foreground text-lg md:text-xl leading-[1.75]">
                     <p>
                         The transition from student to practitioner can be overwhelming, which is why we focus on giving psychology students and recent graduates the practical experience they need to succeed. At InsightEdge, we offer hands-on training in key assessment techniques, mock therapy sessions, and real-world case simulations.
                     </p>
@@ -31,17 +48,17 @@ export function OriginStory() {
             </CardContent>
         </Card>
         
-        <Card className="border-0 shadow-none bg-transparent">
-            <CardHeader className="p-0">
+        <Card className="border-0 shadow-sm bg-background/50 backdrop-blur-sm">
+            <CardHeader className="p-0 pb-8">
                 <div className="flex items-center gap-4">
-                    <div className="flex-shrink-0 bg-primary/20 text-primary p-3 rounded-lg">
+                    <div className="flex-shrink-0 bg-gradient-to-br from-primary/20 to-primary/10 text-primary p-4 rounded-xl shadow-sm">
                         <Users className="w-8 h-8" />
                     </div>
                     <PageTitle title="For the Community" className="text-left mb-0" />
                 </div>
             </CardHeader>
-            <CardContent className="p-0 mt-6">
-                <div className="space-y-4 text-muted-foreground text-lg">
+            <CardContent className="p-0">
+                <div className="space-y-6 text-muted-foreground text-lg md:text-xl leading-[1.75]">
                     <p>
                         Mental health should be a part of everyday conversation. Our second focus is to make mental health a natural part of life, raising awareness and breaking down the barriers that prevent people from seeking help.
                     </p>

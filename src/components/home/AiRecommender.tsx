@@ -9,8 +9,13 @@ import { Loader2, Sparkles } from 'lucide-react';
 import { SectionWrapper } from '../shared/SectionWrapper';
 import { PageTitle } from '../shared/PageTitle';
 import { Label } from '../ui/label';
+import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 
 export function AiRecommender() {
+  const { ref, animationClasses } = useScrollAnimation({
+    threshold: 0.1,
+    animationType: 'fade-right',
+  });
   const [profile, setProfile] = useState('');
   const [history, setHistory] = useState('');
   const [recommendations, setRecommendations] = useState<PersonalizedServiceRecommendationsOutput | null>(null);
@@ -43,12 +48,13 @@ export function AiRecommender() {
 
   return (
     <SectionWrapper className="bg-secondary/30">
-      <PageTitle 
-        title="Find Your Edge"
-        subtitle="Not sure where to start? Describe your goals or interests, and our AI will suggest the perfect InsightEdge service for you."
-        className="mb-12"
-      />
-      <div className="grid gap-12 md:grid-cols-2 max-w-6xl mx-auto">
+      <div ref={ref} className={animationClasses}>
+        <PageTitle 
+          title="Find Your Edge"
+          subtitle="Not sure where to start? Describe your goals or interests, and our AI will suggest the perfect InsightEdge service for you."
+          className="mb-12"
+        />
+        <div className="grid gap-12 md:grid-cols-2 max-w-6xl mx-auto">
         <Card>
             <CardHeader>
                 <CardTitle>Tell Us About Yourself</CardTitle>
@@ -114,6 +120,7 @@ export function AiRecommender() {
             </div>
           )}
         </div>
+      </div>
       </div>
     </SectionWrapper>
   );

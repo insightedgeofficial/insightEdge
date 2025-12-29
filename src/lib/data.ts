@@ -1,4 +1,4 @@
-import type { NavLink, ValueBlock, Service, Event, Testimonial, TeamMember, Founder, FAQ, Milestone, FullService } from './types';
+import type { NavLink, ValueBlock, Service, Event, Testimonial, TeamMember, Founder, FAQ, Milestone, FullService, PastEvent } from './types';
 import { BrainCircuit, PersonStanding, BadgeCheck, TrendingUp, Instagram, Linkedin, Youtube, Facebook } from 'lucide-react';
 
 export const navLinks: NavLink[] = [
@@ -75,28 +75,75 @@ export const services: Service[] = [
 
 export const upcomingEvents: Event[] = [
   {
+    id: 'dance-movement-therapy-3',
     title: 'Dance Movement Therapy 3.0',
     date: '22nd November 2025, 5–7 PM',
     location: 'The Latin Dance India, Bengaluru',
     cta: 'Register Now',
-    href: '/events',
+    href: '/events/dance-movement-therapy-3',
     image: 'event-1',
+    abstract: 'Join us for an immersive experience where movement becomes a pathway to emotional expression and psychological healing. This workshop combines dance, psychology, and mindfulness to help participants explore their inner world through creative movement.',
+    agenda: [
+      'Introduction to Dance Movement Therapy (15 mins)',
+      'Warm-up and Body Awareness Exercises (20 mins)',
+      'Guided Movement Exploration (30 mins)',
+      'Group Movement Activities (25 mins)',
+      'Reflection and Sharing Circle (20 mins)',
+      'Closing and Q&A (10 mins)',
+    ],
+    facilitator: 'Heena Jain, Dance Movement Therapy Facilitator',
+    venue: 'The Latin Dance India, Bengaluru\nAddress: [Venue Address]\nParking available on-site',
+    pricing: 'Early Bird: ₹1,500 (until Nov 10)\nRegular: ₹2,000',
+    registrationLink: 'https://forms.google.com/example',
+    faqs: [
+      { question: 'Do I need prior dance experience?', answer: 'No prior dance experience is required. The workshop is designed for all levels and focuses on movement as a form of expression rather than technique.' },
+      { question: 'What should I wear?', answer: 'Wear comfortable clothing that allows for movement. Loose-fitting or stretchy clothes work best.' },
+    ],
   },
   {
+    id: 'run-for-mental-health',
     title: 'Run for Mental Health: A Campaign',
     date: '29th Nov 2025',
     location: 'Chennai',
     cta: 'View Details',
-    href: '/events',
+    href: '/events/run-for-mental-health',
     image: 'event-2',
+    abstract: 'A community event combining physical activity with mental health awareness. Join us for a 5K run followed by mindfulness sessions and discussions about mental wellbeing.',
+    agenda: [
+      'Registration and Warm-up (30 mins)',
+      '5K Run/Walk (45-60 mins)',
+      'Cool-down and Stretching (15 mins)',
+      'Mindfulness Session (20 mins)',
+      'Mental Health Awareness Talk (30 mins)',
+      'Networking and Refreshments (30 mins)',
+    ],
+    facilitator: 'InsightEdge Team',
+    venue: 'Marina Beach, Chennai\nStarting Point: [Specific Location]\nWater stations available along the route',
+    pricing: 'Individual: ₹500\nGroup (5+): ₹400 per person',
+    registrationLink: 'https://forms.google.com/example',
   },
   {
+    id: 'yoga-therapy-mind-body-reset',
     title: 'Yoga Therapy: Mind body reset',
     date: '7th Dec 2025',
     location: 'Bengaluru',
     cta: 'View Details',
-    href: '/events',
+    href: '/events/yoga-therapy-mind-body-reset',
     image: 'event-3',
+    abstract: 'A therapeutic yoga session designed to reset both mind and body. This workshop integrates yoga asanas, pranayama, and meditation techniques to reduce stress, improve emotional regulation, and enhance overall wellbeing.',
+    agenda: [
+      'Opening Circle and Intention Setting (10 mins)',
+      'Gentle Warm-up (15 mins)',
+      'Therapeutic Asana Practice (40 mins)',
+      'Pranayama (Breathing Techniques) (15 mins)',
+      'Guided Meditation (15 mins)',
+      'Yoga Nidra (Deep Relaxation) (15 mins)',
+      'Closing and Reflection (10 mins)',
+    ],
+    facilitator: 'InsightEdge Facilitator',
+    venue: 'Wellness Studio, Bengaluru\nAddress: [Venue Address]\nMats and props provided',
+    pricing: 'Single Session: ₹1,200\nPackage (3 sessions): ₹3,000',
+    registrationLink: 'https://forms.google.com/example',
   },
 ];
 
@@ -105,21 +152,25 @@ export const testimonials: Testimonial[] = [
     quote: 'InsightEdge sessions helped our students manage exam stress with confidence.',
     author: 'School Counselor',
     role: 'Bengaluru',
+    image: 'testimonial-1',
   },
   {
-    quote: 'The corporate workshop was a turning point for our team’s communication.',
+    quote: "The corporate workshop was a turning point for our team's communication.",
     author: 'HR Lead',
     role: 'Tech Firm',
+    image: 'testimonial-2',
   },
   {
     quote: 'A truly insightful and practical approach to psychology. Highly recommended for any organization.',
     author: 'CEO',
     role: 'Startup',
+    image: 'testimonial-3',
   },
   {
     quote: 'The facilitators are experts who create a safe and engaging learning environment.',
     author: 'University Student',
     role: 'Chennai',
+    image: 'testimonial-4',
   },
 ];
 
@@ -182,6 +233,74 @@ export const milestones: Milestone[] = [
     { date: 'July 2025', description: 'DMT 2.0 in collaboration with Body Story Studios (Wellness Centre).' },
     { date: 'September 2025', description: 'Art Therapy Workshop conducted in collaboration with JITO Youth Wing.' },
     { date: 'October 2025', description: 'Personality Development Workshop in Collaboration with Sprig Electronics.' },
+];
+
+export const pastEvents: PastEvent[] = [
+  {
+    id: 'personality-development-sprig',
+    title: 'Personality Development Workshop',
+    date: 'October 2025',
+    description: 'A comprehensive personality development workshop in collaboration with Sprig Electronics, focusing on professional growth, communication skills, and personal effectiveness in workplace settings.',
+    highlights: [
+      'Collaboration with Sprig Electronics',
+      'Interactive sessions on professional communication',
+      'Personality assessment activities',
+      'Networking opportunities for participants',
+    ],
+    images: ['event-1', 'event-2', 'event-3'],
+  },
+  {
+    id: 'art-therapy-jito',
+    title: 'Art Therapy Workshop',
+    date: 'September 2025',
+    description: 'An engaging art therapy workshop conducted in collaboration with JITO Youth Wing, exploring creative expression as a pathway to emotional wellness and self-discovery.',
+    highlights: [
+      'Collaboration with JITO Youth Wing',
+      'Hands-on art creation activities',
+      'Therapeutic art techniques',
+      'Group sharing and reflection sessions',
+    ],
+    images: ['event-1', 'event-3'],
+  },
+  {
+    id: 'dmt-2-body-story',
+    title: 'Dance Movement Therapy 2.0',
+    date: 'July 2025',
+    description: 'The second edition of our Dance Movement Therapy workshop in collaboration with Body Story Studios, deepening participants\' understanding of movement as a therapeutic tool.',
+    highlights: [
+      'Collaboration with Body Story Studios',
+      'Advanced movement exploration techniques',
+      'Mind-body connection exercises',
+      'Small group facilitation',
+    ],
+    images: ['event-1', 'event-2'],
+  },
+  {
+    id: 'dmt-1-chennai',
+    title: 'Dance Movement Therapy 1.0',
+    date: 'May 2025',
+    description: 'Our inaugural Dance Movement Therapy workshop in Chennai, introducing participants to the healing power of movement and creative expression.',
+    highlights: [
+      'First DMT workshop in Chennai',
+      'Introduction to movement therapy',
+      'Community building activities',
+      'Positive participant feedback',
+    ],
+    images: ['event-1', 'event-2', 'event-3'],
+  },
+  {
+    id: 'projective-tests-dg-vaishnava',
+    title: 'Projective Personality Tests Training',
+    date: 'February 2025',
+    description: 'A training session on Projective Personality tests conducted for students of DG Vaishnava College, providing hands-on learning experience in psychological assessment.',
+    highlights: [
+      'Training session for college students',
+      'Practical application of projective tests',
+      'Interactive learning approach',
+      'Skill-building in assessment techniques',
+    ],
+    images: ['event-2', 'event-3'],
+  },
 ];
 
 export const teamMembers: TeamMember[] = [
@@ -304,10 +423,10 @@ export const fullServices: FullService[] = [
 ];
 
 export const faqs: FAQ[] = [
-  { question: 'How do we book a school program?', answer: 'You can book a school program by filling out our contact form with the "Booking a Workshop" topic selected. Our team will then get in touch with you to discuss your school\'s specific needs and provide a detailed proposal.' },
-  { question: 'Do you offer online modules?', answer: 'Yes, many of our workshops and training modules are available in a hybrid or fully online format to accommodate participants from different locations. Please check the specific service or event details.' },
-  { question: 'How do you ensure safeguarding?', answer: 'Safeguarding is our top priority. Our facilitators are trained in ethical standards and trauma-informed practices. We ensure informed consent, confidentiality, and create a safe, inclusive environment for all participants. You can read more on our "Our Approach" page.' },
-  { question: 'Can you customize programs for NGOs or corporates?', answer: 'Absolutely. We specialize in tailoring our content to meet the unique context and goals of your organization. Contact us to discuss a custom program for your team.' },
-  { question: 'What evidence supports your approach?', answer: 'Our programs are grounded in established psychological frameworks and behavioural science. We draw from cognitive, behavioural, humanistic, and experiential psychology to ensure our methods are effective and research-backed.' },
-  { question: 'Do you provide certificates?', answer: 'Yes, certificates of participation or completion are provided for many of our workshops and training programs. Please refer to the details of each specific service for more information.' },
+  { question: 'How do we book a school program?', answer: 'Simply fill out our contact form and select "Workshop Booking" as your topic. We\'ll get back to you within 2-3 working days to discuss your needs and share a customized proposal.' },
+  { question: 'Do you offer online modules?', answer: 'Yes! Many of our workshops are available online or in a hybrid format. Check individual service pages for format details, or contact us to discuss what works best for you.' },
+  { question: 'How do you ensure safeguarding?', answer: 'Safety comes first. Our facilitators are trained in ethical practices and trauma-informed approaches. We prioritize informed consent, confidentiality, and creating a welcoming space for everyone. Learn more on our Approach page.' },
+  { question: 'Can you customize programs for NGOs or corporates?', answer: 'Absolutely! We love tailoring programs to fit your organization\'s unique goals. Reach out through our contact form, and we\'ll work together to design something perfect for your team.' },
+  { question: 'What evidence supports your approach?', answer: 'Our methods draw from established psychological research and frameworks—including cognitive, behavioral, humanistic, and experiential approaches. Everything we do is grounded in evidence-based practices.' },
+  { question: 'Do you provide certificates?', answer: 'Yes! Most of our workshops and training programs include certificates of participation or completion. Check each service page for specific details.' },
 ];

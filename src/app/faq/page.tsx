@@ -7,7 +7,7 @@ export default function FaqPage() {
     <div>
         <SectionWrapper className="bg-secondary/30">
             <PageTitle
-                title="Frequently Asked Questions"
+                title="What You Should Know"
                 subtitle="Find answers to common questions about our programs, booking process, and how we work."
             />
         </SectionWrapper>

@@ -1,32 +1,52 @@
-import { services } from "@/lib/data";
-import { Card, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+'use client';
+
 import { SectionWrapper } from "../shared/SectionWrapper";
-import { PageTitle } from "../shared/PageTitle";
-import { ArrowRight } from "lucide-react";
+import { ServiceCardStack } from "./ServiceCardStack";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { cn } from "@/lib/utils";
+import { useState, useEffect } from "react";
 
 export function ServicesTeaser() {
+  const { ref, animationClasses } = useScrollAnimation({
+    threshold: 0.1,
+    animationType: 'fade-up',
+  });
+  const [underlineVisible, setUnderlineVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setUnderlineVisible(true), 300);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <SectionWrapper id="services" className="bg-secondary/30">
-      <PageTitle title="Our Services" subtitle="Tailored programs to bring psychological insights into your world." className="mb-12"/>
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {services.map((service) => (
-          <Card key={service.title} className="flex flex-col transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-            <CardHeader className="flex-grow">
-              <CardTitle className="font-headline text-xl">{service.title}</CardTitle>
-              <CardDescription className="pt-2 text-base">{service.text}</CardDescription>
-            </CardHeader>
-            <CardFooter>
-              <Button asChild variant="link" className="p-0 text-foreground">
-                <Link href={service.href}>
-                  {service.cta}
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-            </CardFooter>
-          </Card>
-        ))}
+      <div ref={ref} className={cn(animationClasses, "space-y-8 md:space-y-10")}>
+        {/* Enhanced Heading Section */}
+        <div className="text-center space-y-3">
+          <h2 
+            className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight"
+            style={{ letterSpacing: '-0.02em' }}
+          >
+            Our Services
+          </h2>
+          <div className="relative inline-block">
+            <div 
+              className={cn(
+                "absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent rounded-full",
+                "transition-all duration-1000 ease-out",
+                underlineVisible ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"
+              )}
+            />
+          </div>
+          <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg text-muted-foreground leading-relaxed">
+            Tailored programs to bring psychological insights into your world.
+          </p>
+        </div>
+
+        {/* Service Card Stack */}
+        <div className="transition-all duration-700 ease-out">
+          <ServiceCardStack />
+        </div>
       </div>
     </SectionWrapper>
   );

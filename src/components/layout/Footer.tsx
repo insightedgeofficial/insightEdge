@@ -72,7 +72,7 @@ export function Footer() {
       <div className="border-t">
         <div className="container flex flex-col items-center justify-between py-6 text-sm md:flex-row">
           <p className="text-muted-foreground">
-            © {year} InsightEdge | Connecting Theory and Practice 🧠
+            © {year} InsightEdge | Experience Designers
           </p>
         </div>
       </div>
