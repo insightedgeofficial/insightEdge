@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { SectionWrapper } from '@/components/shared/SectionWrapper';
 import { PageTitle } from '@/components/shared/PageTitle';
+import { BackButton } from '@/components/shared/BackButton';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Calendar, MapPin, User, DollarSign, ExternalLink } from 'lucide-react';
@@ -16,13 +17,14 @@ import {
 } from '@/components/ui/accordion';
 
 interface EventPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
-export default function EventPage({ params }: EventPageProps) {
-  const event = upcomingEvents.find((e) => e.id === params.id);
+export default async function EventPage({ params }: EventPageProps) {
+  const { id } = await params;
+  const event = upcomingEvents.find((e) => e.id === id);
 
   if (!event) {
     notFound();
@@ -43,6 +45,9 @@ export default function EventPage({ params }: EventPageProps) {
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
+          <div className="absolute top-4 left-4 z-10">
+            <BackButton href="/events" label="Back" className="bg-background/90 backdrop-blur-sm shadow-sm" />
+          </div>
           <div className="absolute bottom-0 left-0 right-0 container mx-auto px-4 md:px-6 pb-8">
             <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold text-foreground">
               {event.title}
@@ -53,6 +58,11 @@ export default function EventPage({ params }: EventPageProps) {
 
       <SectionWrapper>
         <div className="max-w-4xl mx-auto">
+          {!image && (
+            <div className="mb-6">
+              <BackButton href="/events" label="Back to Events" />
+            </div>
+          )}
           {/* Abstract */}
           {event.abstract && (
             <div className="mb-12">

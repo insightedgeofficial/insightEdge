@@ -14,27 +14,42 @@ export function OriginStory() {
   });
 
   return (
-    <SectionWrapper className="relative bg-background overflow-hidden !py-20 md:!py-28 lg:!py-32">
-      {/* Grain texture */}
+    <SectionWrapper 
+      className="relative overflow-hidden"
+      style={{ 
+        backgroundColor: '#F9F7F2',
+        paddingTop: '40px',
+        paddingBottom: '40px',
+        paddingLeft: '20px',
+        paddingRight: '20px',
+      }}
+    >
       <div 
-        className="absolute inset-0 opacity-[0.015] pointer-events-none"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='4' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
-        }}
-      />
-
-      <div ref={ref} className={cn("relative grid items-start gap-20 lg:gap-24 lg:grid-cols-2", animationClasses)}>
-        <Card className="border-0 shadow-sm bg-background/50 backdrop-blur-sm">
-            <CardHeader className="p-0 pb-8">
-                <div className="flex items-center gap-4">
-                    <div className="flex-shrink-0 bg-gradient-to-br from-primary/20 to-primary/10 text-primary p-4 rounded-xl shadow-sm">
-                        <GraduationCap className="w-8 h-8" />
+        ref={ref} 
+        className={cn("relative grid items-start gap-12 lg:gap-16 lg:grid-cols-2 max-w-5xl mx-auto", animationClasses)}
+      >
+        <Card 
+          className="border shadow-sm bg-card border-border"
+          style={{ borderRadius: '16px' }}
+        >
+            <CardHeader className="p-6 pb-4">
+                <div className="flex items-center gap-3">
+                    <div 
+                      className="flex-shrink-0 p-3 rounded-xl shadow-sm bg-secondary"
+                    >
+                        <GraduationCap className="w-6 h-6 text-primary" />
                     </div>
-                    <PageTitle title="For Psychology Students and Early Graduates" className="text-left mb-0" />
+                    <h3 
+                      className="font-headline text-xl md:text-2xl font-bold text-foreground"
+                    >
+                      For Psychology Students and Early Graduates
+                    </h3>
                 </div>
             </CardHeader>
-            <CardContent className="p-0">
-                <div className="space-y-6 text-muted-foreground text-lg md:text-xl leading-[1.75]">
+            <CardContent className="p-6 pt-0">
+                <div 
+                  className="space-y-4 text-base md:text-lg leading-[1.6] font-light font-body text-foreground"
+                >
                     <p>
                         The transition from student to practitioner can be overwhelming, which is why we focus on giving psychology students and recent graduates the practical experience they need to succeed. At InsightEdge, we offer hands-on training in key assessment techniques, mock therapy sessions, and real-world case simulations.
                     </p>
@@ -48,17 +63,28 @@ export function OriginStory() {
             </CardContent>
         </Card>
         
-        <Card className="border-0 shadow-sm bg-background/50 backdrop-blur-sm">
-            <CardHeader className="p-0 pb-8">
-                <div className="flex items-center gap-4">
-                    <div className="flex-shrink-0 bg-gradient-to-br from-primary/20 to-primary/10 text-primary p-4 rounded-xl shadow-sm">
-                        <Users className="w-8 h-8" />
+        <Card 
+          className="border shadow-sm bg-card border-border"
+          style={{ borderRadius: '16px' }}
+        >
+            <CardHeader className="p-6 pb-4">
+                <div className="flex items-center gap-3">
+                    <div 
+                      className="flex-shrink-0 p-3 rounded-xl shadow-sm bg-secondary"
+                    >
+                        <Users className="w-6 h-6 text-primary" />
                     </div>
-                    <PageTitle title="For the Community" className="text-left mb-0" />
+                    <h3 
+                      className="font-headline text-xl md:text-2xl font-bold text-foreground"
+                    >
+                      For the Community
+                    </h3>
                 </div>
             </CardHeader>
-            <CardContent className="p-0">
-                <div className="space-y-6 text-muted-foreground text-lg md:text-xl leading-[1.75]">
+            <CardContent className="p-6 pt-0">
+                <div 
+                  className="space-y-4 text-base md:text-lg leading-[1.6] font-light font-body text-foreground"
+                >
                     <p>
                         Mental health should be a part of everyday conversation. Our second focus is to make mental health a natural part of life, raising awareness and breaking down the barriers that prevent people from seeking help.
                     </p>

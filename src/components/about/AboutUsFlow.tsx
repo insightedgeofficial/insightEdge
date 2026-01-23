@@ -11,25 +11,25 @@ const flowSteps = [
   {
     icon: Search,
     title: 'Research',
-    description: 'Grounded in evidence-based psychological frameworks and behavioral science',
+    description: 'Evidence-based frameworks and behavioral science',
     color: 'from-primary/20 to-primary/10',
   },
   {
     icon: Palette,
     title: 'Design',
-    description: 'Creative, experiential approaches that make learning engaging and memorable',
+    description: 'Creative approaches for engaging learning experiences',
     color: 'from-accent/20 to-accent/10',
   },
   {
     icon: Rocket,
-    title: 'Implementation',
-    description: 'Practical programs delivered in real-world contexts: schools, workplaces, communities',
+    title: 'Execute',
+    description: 'Programs delivered across schools, workplaces, and communities',
     color: 'from-primary/30 to-accent/30',
   },
   {
     icon: Target,
     title: 'Impact',
-    description: 'Measurable outcomes: empowered individuals, stronger communities, normalized mental health',
+    description: 'Empowered individuals and stronger communities',
     color: 'from-accent/30 to-primary/20',
   },
 ];
@@ -41,31 +41,36 @@ export function AboutUsFlow() {
   });
 
   return (
-    <SectionWrapper className="relative bg-gradient-to-b from-background via-secondary/20 to-background overflow-hidden !py-20 md:!py-28 lg:!py-32">
-      {/* Grain texture */}
-      <div 
-        className="absolute inset-0 opacity-[0.015] pointer-events-none"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='4' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
-        }}
-      />
-
+    <SectionWrapper 
+      className="relative overflow-hidden"
+      style={{ 
+        backgroundColor: '#F9F7F2',
+        paddingTop: '40px',
+        paddingBottom: '40px',
+        paddingLeft: '20px',
+        paddingRight: '20px',
+      }}
+    >
       <div ref={sectionRef} className="relative">
-        <h2 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold mb-6 md:mb-8 text-center tracking-tight">
+        <h2 
+          className="font-headline text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 text-center tracking-tight text-foreground"
+        >
           About Us
         </h2>
-        <p className="text-center text-muted-foreground mb-20 md:mb-24 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed">
+        <p 
+          className="text-center mb-12 md:mb-16 max-w-2xl mx-auto text-base md:text-lg lg:text-xl leading-relaxed font-light text-muted-foreground"
+        >
           Our dual-focus model transforms psychological insight into real-world impact
         </p>
         
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           {/* Flow Diagram */}
           <div className="relative">
-            {/* Connecting Line - Horizontal for mobile, curved for desktop */}
-            <div className="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-primary/60 transform -translate-y-1/2 z-0">
+            {/* Connecting Line - Horizontal for desktop */}
+            <div className="hidden md:flex absolute top-1/2 left-0 right-0 h-1 bg-muted transform -translate-y-1/2 z-0 items-center">
               <div 
                 className={cn(
-                  "h-full bg-gradient-to-r from-primary to-accent transition-all duration-1000 ease-out",
+                  "h-full bg-primary transition-all duration-1000 ease-out",
                   isVisible ? "w-full" : "w-0"
                 )}
                 style={{ transitionDelay: '300ms' }}
@@ -73,10 +78,10 @@ export function AboutUsFlow() {
             </div>
             
             {/* Mobile connecting line */}
-            <div className="md:hidden absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-accent to-primary/60 transform -translate-x-1/2 z-0">
+            <div className="md:hidden absolute left-1/2 top-0 bottom-0 w-1 bg-muted transform -translate-x-1/2 z-0 flex items-center justify-center">
               <div 
                 className={cn(
-                  "w-full bg-gradient-to-b from-primary to-accent transition-all duration-1000 ease-out",
+                  "w-full bg-primary transition-all duration-1000 ease-out",
                   isVisible ? "h-full" : "h-0"
                 )}
                 style={{ transitionDelay: '300ms' }}
@@ -84,7 +89,7 @@ export function AboutUsFlow() {
             </div>
 
             {/* Steps */}
-            <div className="relative grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-4 z-10">
+            <div className="relative flex flex-col md:flex-row gap-8 md:gap-4 z-10">
               {flowSteps.map((step, index) => (
                 <FlowStep
                   key={step.title}
@@ -125,40 +130,63 @@ function FlowStep({
   return (
     <Card
       className={cn(
-        "relative bg-background/80 backdrop-blur-sm border-2 transition-all duration-700 ease-out text-center shadow-sm hover:shadow-md",
+        "relative backdrop-blur-sm border transition-all duration-700 ease-out text-center shadow-sm hover:shadow-md bg-card border-border flex flex-col",
         stepVisible
-          ? "opacity-100 translate-y-0 scale-100 border-primary/20"
-          : "opacity-0 translate-y-8 scale-95 border-transparent"
+          ? "opacity-100 translate-y-0 scale-100"
+          : "opacity-0 translate-y-8 scale-95"
       )}
-      style={{ transitionDelay: `${index * 200 + 400}ms` }}
+      style={{ 
+        transitionDelay: `${index * 200 + 400}ms`,
+        borderRadius: '16px',
+        flex: '1 1 0%',
+        minHeight: '200px',
+        height: '100%',
+      }}
     >
-      <CardContent className="pt-8 pb-8 px-6">
+      <CardContent className="p-0 flex-1 flex flex-col justify-center items-center py-6 px-4 md:px-5 overflow-hidden min-h-full">
         {/* Icon Circle */}
         <div
           className={cn(
-            "relative mx-auto mb-4 w-16 h-16 rounded-full bg-gradient-to-br flex items-center justify-center transition-all duration-500 ease-out",
-            step.color,
+            "relative mx-auto mb-3 w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center transition-all duration-500 ease-out bg-secondary flex-shrink-0",
             stepVisible ? "scale-100 rotate-0" : "scale-0 rotate-180"
           )}
           style={{ transitionDelay: `${index * 200 + 600}ms` }}
         >
-          <Icon className="h-8 w-8 text-primary" />
+          <Icon className="h-6 w-6 md:h-7 md:w-7 text-primary" />
         </div>
 
         {/* Title */}
-        <h3 className="font-headline text-xl font-bold mb-2">{step.title}</h3>
+        <h3 
+          className="font-headline text-base md:text-lg font-bold mb-2 text-foreground break-words"
+          style={{ 
+            wordBreak: 'break-word',
+            overflowWrap: 'break-word',
+            lineHeight: '1.3',
+          }}
+        >
+          {step.title}
+        </h3>
 
         {/* Description */}
-        <p className="text-sm text-muted-foreground leading-relaxed">
+        <p 
+          className="text-xs md:text-sm font-light font-body text-muted-foreground break-words px-2"
+          style={{ 
+            lineHeight: '1.6',
+            wordBreak: 'break-word',
+            overflowWrap: 'break-word',
+          }}
+        >
           {step.description}
         </p>
 
         {/* Arrow for mobile */}
         {index < flowSteps.length - 1 && (
-          <div className="md:hidden absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2">
-            <div className="w-0.5 h-8 bg-gradient-to-b from-primary to-accent" />
+          <div className="md:hidden absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 z-10">
+            <div className="w-0.5 h-8 bg-primary" />
             <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full">
-              <div className="w-0 h-0 border-l-[6px] border-r-[6px] border-t-[8px] border-l-transparent border-r-transparent border-t-accent" />
+              <div 
+                className="w-0 h-0 border-l-[6px] border-r-[6px] border-t-[8px] border-l-transparent border-r-transparent border-t-primary" 
+              />
             </div>
           </div>
         )}

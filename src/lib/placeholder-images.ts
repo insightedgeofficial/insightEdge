@@ -9,7 +9,7 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
   {
     id: "founder-priyanka",
     description: "Portrait of Priyanka Surana",
-    imageUrl: "https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc2Mzk1OTYyM3ww&ixlib=rb-4.1.0&q=80&w=1080",
+    imageUrl: "/team/WhatsApp Image 2026-01-09 at 9.19.26 AM.jpeg",
     imageHint: "woman portrait"
   },
   {
@@ -21,25 +21,25 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
   {
     id: "team-heena",
     description: "Portrait of Heena Jain",
-    imageUrl: "https://images.unsplash.com/photo-1546961329-78bef0414d7c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc2Mzk1OTYyM3ww&ixlib=rb-4.1.0&q=80&w=1080",
+    imageUrl: "/team/Heena.JPG",
     imageHint: "woman portrait"
   },
   {
     id: "team-yashi",
     description: "Portrait of Yashi Sonthalia",
-    imageUrl: "https://images.unsplash.com/photo-1609505848912-b7c3b8b4beda?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc2Mzk1OTYyM3ww&ixlib=rb-4.1.0&q=80&w=1080",
+    imageUrl: "/team/Yashi.JPG",
     imageHint: "woman portrait"
   },
   {
     id: "team-drishti",
     description: "Portrait of Drishti Agarwal",
-    imageUrl: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc2Mzk1OTYyM3ww&ixlib=rb-4.1.0&q=80&w=1080",
+    imageUrl: "/team/Drishti.JPG",
     imageHint: "woman portrait"
   },
   {
     id: "team-lekhima",
     description: "Portrait of Lekhima Bhutia",
-    imageUrl: "https://images.unsplash.com/photo-1614283233556-f35b0c801ef1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc2Mzk1OTYyM3ww&ixlib=rb-4.1.0&q=80&w=1080",
+    imageUrl: "/team/Lekhima.jpg",
     imageHint: "woman portrait"
   },
   {
@@ -57,7 +57,7 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
   {
     id: "team-kiran",
     description: "Portrait of Kiran Thulasiraman Reddy",
-    imageUrl: "https://images.unsplash.com/photo-1522556189639-b150ed9c4330?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjM5MjU3NzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageUrl: "/team/Kiran.jpeg",
     imageHint: "man portrait"
   },
   {

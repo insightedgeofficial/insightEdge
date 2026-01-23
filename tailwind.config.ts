@@ -17,8 +17,11 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: ['PT Sans', 'sans-serif'],
+        body: ['Red Hat Text', 'sans-serif'],
+        sans: ['Red Hat Text', 'sans-serif'],
         headline: ['Playfair Display', 'serif'],
+        jakarta: ['Plus Jakarta Sans', 'sans-serif'],
+        swash: ['Delius Swash Caps', 'cursive'],
         code: ['monospace'],
       },
       colors: {
@@ -143,6 +146,22 @@ export default {
             transform: 'translateX(100%)',
           },
         },
+        'loop-scroll': {
+          '0%': {
+            transform: 'translateX(0%)',
+          },
+          '100%': {
+            transform: 'translateX(-50%)',
+          },
+        },
+        'loop-scroll-reverse': {
+          '0%': {
+            transform: 'translateX(-50%)',
+          },
+          '100%': {
+            transform: 'translateX(0%)',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -152,6 +171,8 @@ export default {
         'slide-in-from-right': 'slide-in-from-right 0.3s ease-in-out',
         'slide-in-from-left': 'slide-in-from-left 0.3s ease-in-out',
         'shimmer': 'shimmer 3s infinite',
+        'loop-scroll': 'loop-scroll 50s linear infinite',
+        'loop-scroll-reverse': 'loop-scroll-reverse 50s linear infinite',
       },
     },
   },

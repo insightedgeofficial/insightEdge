@@ -75,6 +75,17 @@ export const services: Service[] = [
 
 export const upcomingEvents: Event[] = [
   {
+    id: 'jamovi-training-workshop',
+    title: 'Jamovi Training Workshop',
+    date: '5th, 6th, 7th February 2026',
+    location: 'Online',
+    cta: 'Register Now',
+    href: '/events/jamovi-training-workshop',
+    image: 'event-1',
+    abstract: 'A comprehensive training workshop on Jamovi, a free and open-source statistical software. Learn data analysis, statistical modeling, and reporting using this powerful tool designed for researchers and students.',
+    registrationLink: 'https://forms.gle/vfaknuCxp99d9t4DA',
+  },
+  {
     id: 'dance-movement-therapy-3',
     title: 'Dance Movement Therapy 3.0',
     date: '22nd November 2025, 5–7 PM',
@@ -148,31 +159,79 @@ export const upcomingEvents: Event[] = [
 ];
 
 export const testimonials: Testimonial[] = [
+  // Row 1 - First 5 testimonials
   {
-    quote: 'InsightEdge sessions helped our students manage exam stress with confidence.',
-    author: 'School Counselor',
-    role: 'Bengaluru',
+    quote: 'Working with Insight Edge was an absolute pleasure. Both founders created a warm, collaborative environment and gave us complete freedom to let our creative ideas flow. They are incredibly humble, supportive, and professional. The coordination and arrangements from their side were seamless and truly impressive, I\'d be happy to work with them again.',
+    author: 'Drishti Agarwal',
+    role: '',
     image: 'testimonial-1',
   },
   {
-    quote: "The corporate workshop was a turning point for our team's communication.",
-    author: 'HR Lead',
-    role: 'Tech Firm',
+    quote: 'Working with Insight Edge as a Dance Movement Facilitator was a seamless and rewarding experience. Despite managing their studies and work alongside the startup, the founders demonstrate remarkable clarity in delegating responsibilities, consistent communication, and well-planned event promotion. Their professionalism, commitment, and supportive approach truly stand out. It\'s inspiring to collaborate with such a driven and thoughtfully run team.',
+    author: 'Heena Jain',
+    role: 'Dance Movement Facilitator',
     image: 'testimonial-2',
   },
   {
-    quote: 'A truly insightful and practical approach to psychology. Highly recommended for any organization.',
-    author: 'CEO',
-    role: 'Startup',
+    quote: 'I want to give a small shoutout to the InsightEdge team, headed by Priyanka Surana and Lakshmi Rajesh. I just want to mention how extremely professional and creative they are and how they amalgamate both these attributes to come out with something that I\'ve definitely never heard of. Calling themselves "Experience Designers", they helped us host a session that involved creativity, coming out with your emotions, working through tough periods in life, lifting each other up; the art therapy workshop they helped curate for the JITO Chennai Youth Wing. Definitely one for the books. I wish them the best and hope to see more of such psychology related and mental health related workshops in the future.',
+    author: 'Sudharshan Bohra',
+    role: 'Chief Secretary of JITO Chennai Youth Wing',
     image: 'testimonial-3',
   },
   {
-    quote: 'The facilitators are experts who create a safe and engaging learning environment.',
-    author: 'University Student',
-    role: 'Chennai',
+    quote: 'It was an absolute honor to be a resource person for your workshop. The energy, enthusiasm, and dedication of you both were truly inspiring! You all did a fantastic job in organizing the event, creating an engaging learning space, and making a real impact. This is just the beginning of something amazing! Keep pushing boundaries, keep learning, and keep creating opportunities for growth. I have no doubt that you\'ll continue to do even bigger and better things in the future. Wishing you all the success!',
+    author: 'Pavithra Chinnaiyan',
+    role: '',
     image: 'testimonial-4',
   },
+  {
+    quote: 'Working with Priyanka and Lakshmi was really an amazing experience. Your unwavering support, prompt responses to every query, and willingness to accommodate every request truly made a difference. You both ensured that I felt comfortable throughout the process, which was immensely helpful. Your dedication and passion for the field can be seen in the way you approach your work with professionalism, warmth, and a genuine willingness to help. I truly appreciate your efforts and the positive energy you bring to every interaction. Grateful to be a part of the collaboration',
+    author: 'Feral Upadhyay',
+    role: '',
+    image: 'testimonial-5',
+  },
+  // Row 2 - Next 6 testimonials
+  {
+    quote: 'It was a very nice dance therapy session! We had dancing, as well as a lot of therapeutic moments. There was also so much bonding between us during the session. It was very nice. It was like an ice-breaker as well. We met so many new people; I did not know there were so many people here even though I am a regular person here at Body Story Studios. I really enjoyed myself and the session. Thank you so much for organising',
+    author: 'Participant',
+    role: 'DMT Workshop',
+    image: 'testimonial-6',
+  },
+  {
+    quote: 'I would like to thank InsightEdge for this wonderful experience. They created a very safe space for us, where a lot of us could come and freely express ourselves. It was a very engaging workshop, which made us feel deeply and connect with parts of ourselves, which was very unexpected. We could let ourselves loose and experience emotions freely. We felt very relieved after the workshop was done, as if coming out from under a big haze. I am very thankful to them.',
+    author: 'Participant',
+    role: 'Workshop Attendee',
+    image: 'testimonial-7',
+  },
+  {
+    quote: 'I have attended a lot of dance workshops. But here, the most unique thing was, there was no particular dance choreography or nothing specific that we HAD to follow. We were given the space to just listen to our body and just follow. That gave me a lot of freedom to do things and feel things for myself, as I wanted. I think everybody should experience this at least once.',
+    author: 'Participant',
+    role: 'DMT Workshop',
+    image: 'testimonial-8',
+  },
+  {
+    quote: 'It was a very good session. I was honestly not prepared to be a part of a big group, interact with other people, or try to connect with my feelings in any way. But in the end, I am very happy I turned up in person and was a part of this session. It was very therapeutic and I took part very enthusiastically. It felt very good to have this as a part of my life. The session helped me connect with myself; I felt more motivated and stress-free. I am very thankful to InsightEdge for doing this event',
+    author: 'Participant',
+    role: 'Art Therapy Workshop',
+    image: 'testimonial-9',
+  },
+  {
+    quote: 'The training session conducted by Insight Edge was highly insightful and well-structured. The concepts were explained clearly with relevant real-world examples, making them easy to understand and apply. The session was engaging, interactive, and added significant value to our learning experience. Overall, it was a very effective and impactful training for the whole organisation.',
+    author: 'Vikram Jain',
+    role: 'Founder of Jamsticks Pvt Ltd and SPRIG Electronics',
+    image: 'testimonial-10',
+  },
+  {
+    quote: 'I collaborated with InsightEdge for an Art therapy workshop on September \'25. Lakshmi and Priyanka were the kindest: they kept me in the loop, gave us facilitators our creative liberty and autonomy, and made the entire process seamless and smooth. It was a delight working with the InsightEdge team and I look forward to collaborating with them in the future!',
+    author: 'Yashi Sonthalia',
+    role: 'Counselling Psychologist and Certified Art Therapist',
+    image: 'testimonial-11',
+  },
 ];
+
+// Split testimonials for two rows
+export const testimonialsRow1 = testimonials.slice(0, 5);
+export const testimonialsRow2 = testimonials.slice(5);
 
 export const founders: Founder[] = [
   {
@@ -192,6 +251,7 @@ export const founders: Founder[] = [
 ];
 
 export const socialLinks = [
+  { icon: Facebook, href: 'https://www.facebook.com/profile.php?id=61581207218457', name: 'Facebook' },
   { icon: Instagram, href: 'https://www.instagram.com/_insight.edge_?igsh=MXZnNndjOHJqb2k2Mw%3D%3D&utm_source=qr', name: 'Instagram' },
   { icon: Linkedin, href: 'https://www.linkedin.com/company/insight-edge1234/', name: 'LinkedIn' },
   { icon: Youtube, href: '#', name: 'YouTube' },
@@ -237,8 +297,8 @@ export const milestones: Milestone[] = [
 
 export const pastEvents: PastEvent[] = [
   {
-    id: 'personality-development-sprig',
-    title: 'Personality Development Workshop',
+    id: 'pd-corporate',
+    title: 'PD Corporate Workshop',
     date: 'October 2025',
     description: 'A comprehensive personality development workshop in collaboration with Sprig Electronics, focusing on professional growth, communication skills, and personal effectiveness in workplace settings.',
     highlights: [
@@ -247,11 +307,25 @@ export const pastEvents: PastEvent[] = [
       'Personality assessment activities',
       'Networking opportunities for participants',
     ],
-    images: ['event-1', 'event-2', 'event-3'],
+    images: [
+      { src: '/events/pd-corporate/IMG_0258.HEIC' },
+      { src: '/events/pd-corporate/IMG_0260.HEIC' },
+      { src: '/events/pd-corporate/IMG_0261.HEIC' },
+      { src: '/events/pd-corporate/IMG_0262.HEIC' },
+      { src: '/events/pd-corporate/IMG_0266.HEIC' },
+      { src: '/events/pd-corporate/IMG_0274.HEIC' },
+      { src: '/events/pd-corporate/IMG_0276.HEIC' },
+      { src: '/events/pd-corporate/IMG_0281.HEIC' },
+      { src: '/events/pd-corporate/IMG_0284.jpg' },
+      { src: '/events/pd-corporate/IMG_0287.HEIC' },
+      { src: '/events/pd-corporate/IMG_3866.JPG' },
+      { src: '/events/pd-corporate/IMG_3869.JPG' },
+      { src: '/events/pd-corporate/IMG_3884.JPG' },
+    ],
   },
   {
-    id: 'art-therapy-jito',
-    title: 'Art Therapy Workshop',
+    id: 'jito-art-therapy',
+    title: 'JIOTO Art Therapy Workshop',
     date: 'September 2025',
     description: 'An engaging art therapy workshop conducted in collaboration with JITO Youth Wing, exploring creative expression as a pathway to emotional wellness and self-discovery.',
     highlights: [
@@ -260,37 +334,69 @@ export const pastEvents: PastEvent[] = [
       'Therapeutic art techniques',
       'Group sharing and reflection sessions',
     ],
-    images: ['event-1', 'event-3'],
+    images: [
+      { src: '/events/jito-art-therapy/DSC_0016.JPG' },
+      { src: '/events/jito-art-therapy/DSC_0036.JPG' },
+      { src: '/events/jito-art-therapy/DSC_0061.JPG' },
+      { src: '/events/jito-art-therapy/DSC_0064.JPG' },
+      { src: '/events/jito-art-therapy/DSC_0066.JPG' },
+      { src: '/events/jito-art-therapy/DSC_0102.JPG' },
+      { src: '/events/jito-art-therapy/DSC_0103.JPG' },
+      { src: '/events/jito-art-therapy/DSC_0114.JPG' },
+      { src: '/events/jito-art-therapy/DSC_0119.JPG' },
+      { src: '/events/jito-art-therapy/DSC_0142.JPG' },
+      { src: '/events/jito-art-therapy/DSC_0151.JPG' },
+      { src: '/events/jito-art-therapy/DSC_0161.JPG' },
+      { src: '/events/jito-art-therapy/DSC_0173.JPG' },
+      { src: '/events/jito-art-therapy/DSC_0190.JPG' },
+      { src: '/events/jito-art-therapy/DSC_0203.JPG' },
+      { src: '/events/jito-art-therapy/DSC_0206.JPG' },
+      { src: '/events/jito-art-therapy/DSC_0221.JPG' },
+      { src: '/events/jito-art-therapy/DSC_0234.JPG' },
+      { src: '/events/jito-art-therapy/DSC_0269.JPG' },
+      { src: '/events/jito-art-therapy/DSC_0303.JPG' },
+      { src: '/events/jito-art-therapy/DSC_0312.JPG' },
+      { src: '/events/jito-art-therapy/DSC_0394.JPG' },
+      { src: '/events/jito-art-therapy/DSC_0408.JPG' },
+      { src: '/events/jito-art-therapy/DSC_0478.JPG' },
+      { src: '/events/jito-art-therapy/DSC_0492.JPG' },
+      { src: '/events/jito-art-therapy/DSC_0495.JPG' },
+      { src: '/events/jito-art-therapy/DSC_0552.JPG' },
+      { src: '/events/jito-art-therapy/DSC_0566.JPG' },
+      { src: '/events/jito-art-therapy/DSC_0569.JPG' },
+      { src: '/events/jito-art-therapy/DSC_0598.JPG' },
+      { src: '/events/jito-art-therapy/DSC_0599.JPG' },
+      { src: '/events/jito-art-therapy/DSC_0615.JPG' },
+    ],
   },
   {
-    id: 'dmt-2-body-story',
-    title: 'Dance Movement Therapy 2.0',
+    id: 'dmt-workshop',
+    title: 'DMT Workshop',
     date: 'July 2025',
-    description: 'The second edition of our Dance Movement Therapy workshop in collaboration with Body Story Studios, deepening participants\' understanding of movement as a therapeutic tool.',
+    description: 'Dance Movement Therapy workshop in collaboration with Body Story Studios, deepening participants\' understanding of movement as a therapeutic tool.',
     highlights: [
       'Collaboration with Body Story Studios',
       'Advanced movement exploration techniques',
       'Mind-body connection exercises',
       'Small group facilitation',
     ],
-    images: ['event-1', 'event-2'],
-  },
-  {
-    id: 'dmt-1-chennai',
-    title: 'Dance Movement Therapy 1.0',
-    date: 'May 2025',
-    description: 'Our inaugural Dance Movement Therapy workshop in Chennai, introducing participants to the healing power of movement and creative expression.',
-    highlights: [
-      'First DMT workshop in Chennai',
-      'Introduction to movement therapy',
-      'Community building activities',
-      'Positive participant feedback',
+    images: [
+      { src: '/events/dmt-workshop/IMG_0930.JPG' },
+      { src: '/events/dmt-workshop/05240877-f9f5-410d-939d-25ea4181add1.JPG' },
+      { src: '/events/dmt-workshop/2c33e8bc-1677-42be-8e4e-620d6b5b1a16.JPG' },
+      { src: '/events/dmt-workshop/9e97f0d6-c83a-4e86-a167-f5577c7ea4d8.JPG' },
+      { src: '/events/dmt-workshop/IMG_0932.JPG' },
+      { src: '/events/dmt-workshop/IMG_0945.JPG' },
+      { src: '/events/dmt-workshop/IMG_0962.JPG' },
+      { src: '/events/dmt-workshop/IMG_0992.JPG' },
+      { src: '/events/dmt-workshop/IMG_1026.PNG' },
+      { src: '/events/dmt-workshop/IMG_1027.PNG' },
+      { src: '/events/dmt-workshop/IMG_1028.PNG' },
     ],
-    images: ['event-1', 'event-2', 'event-3'],
   },
   {
-    id: 'projective-tests-dg-vaishnava',
-    title: 'Projective Personality Tests Training',
+    id: 'dg-vaishnav',
+    title: 'DG Vaishnav',
     date: 'February 2025',
     description: 'A training session on Projective Personality tests conducted for students of DG Vaishnava College, providing hands-on learning experience in psychological assessment.',
     highlights: [
@@ -299,7 +405,24 @@ export const pastEvents: PastEvent[] = [
       'Interactive learning approach',
       'Skill-building in assessment techniques',
     ],
-    images: ['event-2', 'event-3'],
+    images: [
+      { src: '/events/dg-vaishnav/DSC01501.JPG' },
+      { src: '/events/dg-vaishnav/4d6ebb79-d9da-450c-8c39-3fde7390cf6e.JPG' },
+      { src: '/events/dg-vaishnav/DSC01375.JPG' },
+      { src: '/events/dg-vaishnav/DSC01376.JPG' },
+      { src: '/events/dg-vaishnav/DSC01378.JPG' },
+      { src: '/events/dg-vaishnav/DSC01401.JPG' },
+      { src: '/events/dg-vaishnav/DSC01403.JPG' },
+      { src: '/events/dg-vaishnav/DSC01411.JPG' },
+      { src: '/events/dg-vaishnav/DSC01419.JPG' },
+      { src: '/events/dg-vaishnav/DSC01421.JPG' },
+      { src: '/events/dg-vaishnav/DSC01428.JPG' },
+      { src: '/events/dg-vaishnav/DSC01436.JPG' },
+      { src: '/events/dg-vaishnav/DSC01466.JPG' },
+      { src: '/events/dg-vaishnav/DSC01473.JPG' },
+      { src: '/events/dg-vaishnav/DSC01489.JPG' },
+      { src: '/events/dg-vaishnav/DSC01512.JPG' },
+    ],
   },
 ];
 
@@ -410,8 +533,7 @@ export const fullServices: FullService[] = [
         outcomes: [
             'Personalised university lists based on fit, eligibility, and career goals',
             'Clear guidance on SOPs, LORs, CVs, and timelines',
-            'Application mentoring with psychology-specific insight',
-            'Smooth transition support for adjusting to life abroad'
+            'Application mentoring with psychology-specific insight'
         ],
         audience: 'UG & PG Psychology Students, Career Switchers, Early-career Professionals',
         format: '1:1 consulting / Document review / Full-journey mentorship',
@@ -420,13 +542,74 @@ export const fullServices: FullService[] = [
         cta: 'Explore Consulting Options',
         ctaLink: '/contact'
     },
+    {
+        category: 'Statistical Services (Research Support)',
+        overview: 'Our statistical support helps students, researchers, and organizations turn data into reliable, decision-ready insights – from study design to analysis and final reporting.',
+        outcomes: [
+            'Study Design',
+            'Data Analysis',
+            'Reporting & Review'
+        ],
+        audience: 'Students, Researchers, Faculty, Clinicians, NGOs, Organizations',
+        format: 'Consultations / Analysis Support / Reporting & Review',
+        duration: 'Single-session support to multi-week project engagement',
+        pricing: 'Per consultation, per dataset, or per project package',
+        cta: 'Request Research Support',
+        ctaLink: '/contact'
+    },
 ];
 
 export const faqs: FAQ[] = [
-  { question: 'How do we book a school program?', answer: 'Simply fill out our contact form and select "Workshop Booking" as your topic. We\'ll get back to you within 2-3 working days to discuss your needs and share a customized proposal.' },
-  { question: 'Do you offer online modules?', answer: 'Yes! Many of our workshops are available online or in a hybrid format. Check individual service pages for format details, or contact us to discuss what works best for you.' },
-  { question: 'How do you ensure safeguarding?', answer: 'Safety comes first. Our facilitators are trained in ethical practices and trauma-informed approaches. We prioritize informed consent, confidentiality, and creating a welcoming space for everyone. Learn more on our Approach page.' },
-  { question: 'Can you customize programs for NGOs or corporates?', answer: 'Absolutely! We love tailoring programs to fit your organization\'s unique goals. Reach out through our contact form, and we\'ll work together to design something perfect for your team.' },
-  { question: 'What evidence supports your approach?', answer: 'Our methods draw from established psychological research and frameworks—including cognitive, behavioral, humanistic, and experiential approaches. Everything we do is grounded in evidence-based practices.' },
-  { question: 'Do you provide certificates?', answer: 'Yes! Most of our workshops and training programs include certificates of participation or completion. Check each service page for specific details.' },
+  { 
+    question: 'What kinds of programs does InsightEdge offer?', 
+    answer: 'We offer evidence-based workshops, clinical internships, capacity-building training, study abroad consulting, research support, and customized wellbeing programs for schools, universities, corporates, NGOs, and community organisations. This includes art therapy, dance movement therapy (DMT), and other mental health-based workshops.' 
+  },
+  { 
+    question: 'Are your workshops suitable for non-psychology audiences?', 
+    answer: 'Yes. Many of our school, corporate, and community workshops are designed for general audiences. Only the technical modules (like assessment or research training) are psychology-specific.' 
+  },
+  { 
+    question: 'Can you design custom workshops for our institution?', 
+    answer: 'Absolutely. Most of our work is tailor-made. We design sessions based on your audience, context, and learning goals.' 
+  },
+  { 
+    question: 'Do your university workshops cover clinical and counselling skills?', 
+    answer: 'Yes. Our modules include therapeutic communication, case conceptualisation, interviewing basics, ethics, and research exposure—aligned with UG/PG psychology curricula.' 
+  },
+  { 
+    question: 'Do you conduct long-term programs for institutions?', 
+    answer: 'Yes. We offer term-based modules, semester-linked partnerships, and multi-week training models for schools and colleges.' 
+  },
+  { 
+    question: 'Do you provide certification for capacity-building programs?', 
+    answer: 'Yes. Participants receive a certificate upon completing attendance and activity requirements.' 
+  },
+  { 
+    question: 'What does the study abroad consulting process include?', 
+    answer: 'Program shortlisting, SOP/LOR/CV support, interview preparation, documentation review, timeline planning, and transition guidance.' 
+  },
+  { 
+    question: 'Can I book just one consultation for study abroad instead of the full package?', 
+    answer: 'Yes. You can opt for single sessions or full-cycle mentorship.' 
+  },
+  { 
+    question: 'Do you offer training in SPSS, Jamovi, R, or qualitative tools?', 
+    answer: 'Yes. We run instructor-led modules for statistical software, qualitative coding, and scientific writing.' 
+  },
+  { 
+    question: 'How do you ensure participant safety during workshops?', 
+    answer: 'All facilitators follow trauma-informed, culturally sensitive practices, maintain confidentiality, and obtain informed consent where required.' 
+  },
+  { 
+    question: 'What if a participant requires clinical support?', 
+    answer: 'If needs fall beyond the scope of the workshop, we provide referral pathways and guidance on seeking appropriate professional services.' 
+  },
+  { 
+    question: 'Are your events beginner-friendly?', 
+    answer: 'Most events—especially movement, art, and reflective workshops—do not require prior experience. Technical training events will specify prerequisites.' 
+  },
+  { 
+    question: 'How do I contact you directly?', 
+    answer: 'You can reach us at insightedge.contact@gmail.com or via our Contact page form. We respond within 24 hours.' 
+  },
 ];

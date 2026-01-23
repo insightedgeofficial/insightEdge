@@ -1,8 +1,16 @@
 'use client';
 
 import { SectionWrapper } from '../shared/SectionWrapper';
-import { Sparkles, TrendingUp, Lightbulb, Eye, Target } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/use-scroll-animation';
+import { Search, Palette, Rocket, Target, Heart, Lightbulb } from 'lucide-react';
+
+const cardData = [
+  { keyword: 'RESEARCH', icon: Search },
+  { keyword: 'DESIGN', icon: Palette },
+  { keyword: 'IMPACT', icon: Target },
+  { keyword: 'EMPATHY', icon: Heart },
+  { keyword: 'INNOVATION', icon: Lightbulb },
+];
 
 export function NameBreakdown() {
   const { ref: sectionRef, isVisible } = useScrollAnimation({
@@ -11,175 +19,188 @@ export function NameBreakdown() {
   });
 
   return (
-    <SectionWrapper className="relative bg-gradient-to-b from-background via-secondary/10 to-background py-20 lg:py-28 overflow-hidden">
-      {/* Subtle background decoration */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-1/4 left-0 w-96 h-96 bg-primary rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-accent rounded-full blur-3xl" />
-      </div>
-
+    <SectionWrapper 
+      className="relative py-24 md:py-32 lg:py-40 overflow-hidden"
+      style={{
+        backgroundColor: 'hsl(var(--background))', // Website beige/cream
+      }}
+    >
       <div ref={sectionRef} className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="max-w-7xl mx-auto">
-          {/* Title */}
+          {/* Static Section Introduction */}
           <div
-            className={`text-center mb-16 transition-all duration-500 ease-out ${
+            className={`mb-16 md:mb-20 transition-all duration-700 ease-out ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}
           >
-            <div className="inline-block mb-3">
-              <span className="text-sm md:text-base font-semibold text-primary uppercase tracking-wider">
-                Meaning Behind the Name
-              </span>
-            </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-headline font-bold text-foreground tracking-tight">
-              INSIGHT<span className="text-primary">EDGE</span>
-            </h2>
-          </div>
-
-          {/* Split Layout */}
-          <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-start relative">
-            {/* Vertical Divider */}
-            <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-border to-transparent -translate-x-1/2" />
-
-            {/* INSIGHT - Left Side */}
-            <div
-              className={`transition-all duration-500 ease-out delay-75 ${
-                isVisible
-                  ? 'opacity-100 translate-x-0'
-                  : 'opacity-0 -translate-x-6'
-              }`}
-            >
-              <div className="relative">
-                {/* Header */}
-                <div className="flex items-center gap-4 mb-8">
-                  <div className="p-3 bg-primary/10 rounded-xl border border-primary/20">
-                    <Lightbulb className="h-7 w-7 text-primary" />
-                  </div>
-                  <h3 className="text-5xl md:text-6xl lg:text-7xl font-headline font-bold text-primary tracking-tighter">
-                    INSIGHT
-                  </h3>
-                </div>
-
-                {/* Points */}
-                <div className="space-y-5">
-                  <div className="group flex items-start gap-4 p-4 rounded-lg hover:bg-secondary/50 transition-colors duration-200">
-                    <div className="flex-shrink-0 mt-1">
-                      <Eye className="h-5 w-5 text-primary transition-transform duration-200 group-hover:scale-110" />
-                    </div>
-                    <div>
-                      <p className="text-base md:text-lg font-semibold text-foreground mb-1">
-                        Awareness
-                      </p>
-                      <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                        Seeing beyond the surface
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="group flex items-start gap-4 p-4 rounded-lg hover:bg-secondary/50 transition-colors duration-200">
-                    <div className="flex-shrink-0 mt-1">
-                      <Sparkles className="h-5 w-5 text-primary transition-transform duration-200 group-hover:rotate-12" />
-                    </div>
-                    <div>
-                      <p className="text-base md:text-lg font-semibold text-foreground mb-1">
-                        Clarity
-                      </p>
-                      <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                        Understanding what truly matters
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="group flex items-start gap-4 p-4 rounded-lg hover:bg-secondary/50 transition-colors duration-200">
-                    <div className="flex-shrink-0 mt-1">
-                      <Target className="h-5 w-5 text-primary transition-transform duration-200 group-hover:scale-110" />
-                    </div>
-                    <div>
-                      <p className="text-base md:text-lg font-semibold text-foreground mb-1">
-                        Deeper understanding
-                      </p>
-                      <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                        Connecting the dots
-                      </p>
-                    </div>
-                  </div>
-                </div>
+            <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start relative">
+              {/* Heading - Left aligned */}
+              <div>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-headline font-bold text-foreground text-left">
+                  The InsightEdge Philosophy
+                </h2>
               </div>
-            </div>
 
-            {/* EDGE - Right Side */}
-            <div
-              className={`transition-all duration-500 ease-out delay-150 ${
-                isVisible
-                  ? 'opacity-100 translate-x-0'
-                  : 'opacity-0 translate-x-6'
-              }`}
-            >
-              <div className="relative">
-                {/* Header */}
-                <div className="flex items-center gap-4 mb-8 justify-end md:justify-start">
-                  <h3 className="text-5xl md:text-6xl lg:text-7xl font-headline font-bold text-accent tracking-tighter">
-                    EDGE
-                  </h3>
-                  <div className="p-3 bg-accent/10 rounded-xl border border-accent/20">
-                    <TrendingUp className="h-7 w-7 text-accent" />
+              {/* Animated Graphics - Center (visible on md and up) */}
+              <div className="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[200px] pointer-events-none z-0">
+                {/* Animated connecting line */}
+                <div 
+                  className="absolute top-1/2 left-0 right-0 h-[1px]"
+                  style={{
+                    background: 'linear-gradient(90deg, transparent, hsl(var(--primary) / 0.3), transparent)',
+                  }}
+                />
+                
+                {/* Floating icons */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                  <div className="relative w-12 h-12">
+                    {/* Main icon circle */}
+                    <div 
+                      className="absolute inset-0 rounded-full border-2 animate-pulse"
+                      style={{
+                        borderColor: 'hsl(var(--primary) / 0.4)',
+                        animation: 'pulse 3s ease-in-out infinite',
+                      }}
+                    />
+                    <div 
+                      className="absolute inset-0 rounded-full border animate-ping"
+                      style={{
+                        borderColor: 'hsl(var(--primary) / 0.2)',
+                        animation: 'ping 3s cubic-bezier(0, 0, 0.2, 1) infinite',
+                        animationDelay: '0.5s',
+                      }}
+                    />
                   </div>
                 </div>
 
-                {/* Points */}
-                <div className="space-y-5">
-                  <div className="group flex items-start gap-4 p-4 rounded-lg hover:bg-secondary/50 transition-colors duration-200">
-                    <div className="flex-shrink-0 mt-1 order-2 md:order-1">
-                      <TrendingUp className="h-5 w-5 text-accent transition-transform duration-200 group-hover:scale-110" />
-                    </div>
-                    <div className="order-1 md:order-2 text-right md:text-left">
-                      <p className="text-base md:text-lg font-semibold text-foreground mb-1">
-                        Advantage
-                      </p>
-                      <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                        Standing out with purpose
-                      </p>
-                    </div>
-                  </div>
+                {/* Floating decorative elements */}
+                <div 
+                  className="absolute top-0 left-1/4 w-2 h-2 rounded-full animate-float"
+                  style={{
+                    backgroundColor: 'hsl(var(--primary) / 0.4)',
+                    animationDelay: '0s',
+                  }}
+                />
+                <div 
+                  className="absolute bottom-0 right-1/4 w-1.5 h-1.5 rounded-full animate-float"
+                  style={{
+                    backgroundColor: 'hsl(var(--primary) / 0.3)',
+                    animationDelay: '1s',
+                  }}
+                />
+                <div 
+                  className="absolute top-1/4 right-0 w-1 h-1 rounded-full animate-float"
+                  style={{
+                    backgroundColor: 'hsl(var(--primary) / 0.35)',
+                    animationDelay: '1.5s',
+                  }}
+                />
+                <div 
+                  className="absolute bottom-1/4 left-0 w-1.5 h-1.5 rounded-full animate-float"
+                  style={{
+                    backgroundColor: 'hsl(var(--primary) / 0.3)',
+                    animationDelay: '2s',
+                  }}
+                />
+              </div>
 
-                  <div className="group flex items-start gap-4 p-4 rounded-lg hover:bg-secondary/50 transition-colors duration-200">
-                    <div className="flex-shrink-0 mt-1 order-2 md:order-1">
-                      <TrendingUp className="h-5 w-5 text-accent transition-transform duration-200 group-hover:scale-110" />
-                    </div>
-                    <div className="order-1 md:order-2 text-right md:text-left">
-                      <p className="text-base md:text-lg font-semibold text-foreground mb-1">
-                        Growth
-                      </p>
-                      <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                        Continuous evolution
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="group flex items-start gap-4 p-4 rounded-lg hover:bg-secondary/50 transition-colors duration-200">
-                    <div className="flex-shrink-0 mt-1 order-2 md:order-1">
-                      <TrendingUp className="h-5 w-5 text-accent transition-transform duration-200 group-hover:scale-110" />
-                    </div>
-                    <div className="order-1 md:order-2 text-right md:text-left">
-                      <p className="text-base md:text-lg font-semibold text-foreground mb-1">
-                        Forward movement
-                      </p>
-                      <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                        Progress with intention
-                      </p>
-                    </div>
-                  </div>
-                </div>
+              {/* Paragraph - Right aligned */}
+              <div className="text-right relative z-10">
+                <p 
+                  className="text-base md:text-lg leading-relaxed font-body"
+                  style={{
+                    color: 'hsl(var(--primary))', // Project's sage green
+                    lineHeight: '1.8',
+                  }}
+                >
+                  InsightEdge was born from the intersection of deep psychological understanding and the competitive advantage of behavioral science. We don't just provide data; we provide the 'Edge' needed to foster lasting impact and human growth.
+                </p>
               </div>
             </div>
           </div>
 
-          {/* Bottom Accent Line */}
-          <div
-            className={`mt-16 h-0.5 bg-gradient-to-r from-transparent via-primary/20 via-accent/20 to-transparent transition-all duration-500 delay-300 ${
-              isVisible ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'
-            }`}
-          />
+          {/* Scrolling Card Marquee */}
+          <div className="relative w-full overflow-hidden py-8">
+            {/* Faded edges mask */}
+            <div 
+              className="absolute inset-0 z-[1] pointer-events-none"
+              style={{
+                maskImage: 'linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)',
+                WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)',
+              }}
+            />
+            
+            {/* Marquee wrapper */}
+            <div className="marquee-card-wrapper group">
+              <div className="marquee-card-content marquee-smooth">
+                {/* First set of cards */}
+                <div className="flex items-center whitespace-nowrap">
+                  {cardData.map((item, index) => {
+                    const Icon = item.icon;
+                    return (
+                      <div 
+                        key={`first-${index}`}
+                        className="flex-shrink-0 rounded-xl px-5 py-3 md:px-6 md:py-4 mr-4 md:mr-6"
+                        style={{
+                          backgroundColor: 'hsl(42 25% 94%)', // Light beige (slightly different from bg)
+                          border: '1px solid hsl(var(--primary) / 0.3)', // Subtle sage green border
+                          display: 'flex',
+                          flexDirection: 'row',
+                          alignItems: 'center',
+                          gap: '0.75rem',
+                          minWidth: 'fit-content',
+                        }}
+                      >
+                        <Icon 
+                          className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0"
+                          style={{ color: 'hsl(var(--primary))' }} // Sage green icon
+                        />
+                        <span 
+                          className="font-headline font-bold text-sm md:text-base uppercase tracking-wide whitespace-nowrap"
+                          style={{ color: 'hsl(var(--primary))' }} // Sage green text
+                        >
+                          {item.keyword}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
+                
+                {/* Second set of cards (duplicate for seamless loop) */}
+                <div className="flex items-center whitespace-nowrap" aria-hidden="true">
+                  {cardData.map((item, index) => {
+                    const Icon = item.icon;
+                    return (
+                      <div 
+                        key={`second-${index}`}
+                        className="flex-shrink-0 rounded-xl px-5 py-3 md:px-6 md:py-4 mr-4 md:mr-6"
+                        style={{
+                          backgroundColor: 'hsl(42 25% 94%)',
+                          border: '1px solid hsl(var(--primary) / 0.3)',
+                          display: 'flex',
+                          flexDirection: 'row',
+                          alignItems: 'center',
+                          gap: '0.75rem',
+                          minWidth: 'fit-content',
+                        }}
+                      >
+                        <Icon 
+                          className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0"
+                          style={{ color: 'hsl(var(--primary))' }}
+                        />
+                        <span 
+                          className="font-headline font-bold text-sm md:text-base uppercase tracking-wide whitespace-nowrap"
+                          style={{ color: 'hsl(var(--primary))' }}
+                        >
+                          {item.keyword}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </SectionWrapper>

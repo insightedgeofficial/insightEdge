@@ -116,6 +116,7 @@ function AlternatingProfileCard({
               data-ai-hint="person portrait"
               fill
               className="object-cover"
+              style={{ transform: 'scale(1.4)' }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
           </div>
@@ -206,10 +207,8 @@ function HoverRevealCard({
             alt={`Portrait of ${member.name}`}
             data-ai-hint="person portrait"
             fill
-            className={cn(
-              "object-cover transition-all duration-500 ease-out",
-              isHovered ? "scale-110" : "scale-100"
-            )}
+            className="object-cover transition-all duration-500 ease-out"
+            style={{ transform: isHovered ? 'scale(1.5)' : 'scale(1.4)' }}
           />
           <div
             className={cn(

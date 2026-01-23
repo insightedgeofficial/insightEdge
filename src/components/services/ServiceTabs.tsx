@@ -12,7 +12,7 @@ export function ServiceTabs() {
   return (
     <SectionWrapper>
       <Tabs defaultValue={categoryToId(fullServices[0].category)} className="w-full">
-        <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 lg:grid-cols-7 h-auto">
+        <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 lg:grid-cols-8 h-auto">
           {fullServices.map((service) => (
             <TabsTrigger key={service.category} value={categoryToId(service.category)}>{service.category}</TabsTrigger>
           ))}

@@ -111,3 +111,120 @@
     opacity: 0;
   }
 }
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marqueeSlow {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes loop-scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes loop-scroll-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.marquee-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 60px 0;
+}
+
+.marquee-container {
+  width: 100%;
+  overflow: visible;
+}
+
+.marquee-content {
+  display: flex;
+  width: fit-content;
+  padding: 1rem 0;
+  will-change: transform;
+}
+
+.marquee-card-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.marquee-card-content {
+  display: flex;
+  width: fit-content;
+  will-change: transform;
+}
+
+.marquee-fast {
+  animation: marquee 30s linear infinite;
+}
+
+.marquee-stately {
+  animation: marquee 40s linear infinite;
+}
+
+.marquee-smooth {
+  animation: marquee 45s linear infinite;
+}
+
+.marquee-slow {
+  animation: marqueeSlow 40s linear infinite;
+}
+
+.marquee-wrapper:hover .marquee-content,
+.marquee-card-wrapper:hover .marquee-card-content {
+  animation-play-state: paused;
+}
+
+.marquee-text {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-weight: 900;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateY(-15px) scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}

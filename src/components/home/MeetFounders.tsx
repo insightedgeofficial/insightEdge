@@ -10,6 +10,7 @@ import { SectionWrapper } from "../shared/SectionWrapper";
 import { PageTitle } from "../shared/PageTitle";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
 
 export function MeetFounders() {
   const { ref: sectionRef, isVisible } = useScrollAnimation({
@@ -72,6 +73,11 @@ function FounderCard({ founder, index, isVisible }: { founder: typeof founders[0
               width={200}
               height={200}
               className="w-40 h-40 object-cover"
+              style={{
+                transform: founder.name === 'Priyanka Surana' 
+                  ? 'scale(1.15) translateX(-8px) translateY(10px)' 
+                  : 'scale(1.1)'
+              }}
             />
           </div>
         )}

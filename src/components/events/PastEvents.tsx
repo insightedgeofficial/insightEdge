@@ -5,7 +5,6 @@ import { SectionWrapper } from "../shared/SectionWrapper";
 import { PageTitle } from "../shared/PageTitle";
 import { Card } from "../ui/card";
 import Image from "next/image";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
 import Link from "next/link";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useEffect, useState } from "react";
@@ -16,6 +15,11 @@ export function PastEvents() {
     threshold: 0.1,
     animationType: 'fade-up',
   });
+
+  // Debug: Log events to console
+  if (typeof window !== 'undefined') {
+    console.log('Past Events:', pastEvents);
+  }
 
   return (
     <SectionWrapper className="bg-secondary/30">
@@ -46,9 +50,12 @@ function PastEventCard({
 }) {
   const [cardVisible, setCardVisible] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const [imageError, setImageError] = useState(false);
+  
+  // Get first non-HEIC image, or first image if no JPG/PNG available
   const firstImage = event.images && event.images.length > 0
-    ? PlaceHolderImages.find(p => p.id === event.images[0])
-    : PlaceHolderImages.find(p => p.id === 'event-1');
+    ? event.images.find(img => !img.src.toLowerCase().endsWith('.heic'))?.src || event.images[0].src
+    : null;
 
   useEffect(() => {
     if (isVisible) {
@@ -70,16 +77,18 @@ function PastEventCard({
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        {firstImage && (
+        {firstImage && !imageError ? (
           <div className="absolute inset-0">
             <Image
-              src={firstImage.imageUrl}
+              src={firstImage}
               alt={event.title}
               fill
               className={cn(
                 "object-cover transition-transform duration-500 ease-out",
                 isHovered ? "scale-110" : "scale-100"
               )}
+              unoptimized
+              onError={() => setImageError(true)}
             />
             {/* Overlay */}
             <div
@@ -94,6 +103,15 @@ function PastEventCard({
                 {event.title}
               </h3>
               <p className="text-sm text-white/90">{event.date}</p>
+            </div>
+          </div>
+        ) : (
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+            <div className="text-center p-4">
+              <h3 className="font-headline text-xl font-bold mb-1">
+                {event.title}
+              </h3>
+              <p className="text-sm text-muted-foreground">{event.date}</p>
             </div>
           </div>
         )}

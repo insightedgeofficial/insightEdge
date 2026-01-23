@@ -1,17 +1,16 @@
 'use client';
 
 import { pastEvents } from "@/lib/data";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { cn } from "@/lib/utils";
+import type { EventImage } from "@/lib/types";
 
 export function FloatingGallery() {
-  const [currentImages, setCurrentImages] = useState<string[]>([]);
+  const [currentImages, setCurrentImages] = useState<EventImage[]>([]);
   
   // Collect all images from past events
   useEffect(() => {
-    const allImages: string[] = [];
+    const allImages: EventImage[] = [];
     pastEvents.forEach(event => {
       if (event.images) {
         allImages.push(...event.images);
@@ -31,17 +30,14 @@ export function FloatingGallery() {
           Event Highlights
         </h3>
         <div className="grid grid-cols-3 gap-1.5 md:gap-2" style={{ gridAutoRows: '60px' }}>
-          {currentImages.slice(0, 6).map((imageId, index) => {
-            const image = PlaceHolderImages.find(p => p.id === imageId);
-            if (!image) return null;
-            
+          {currentImages.slice(0, 6).map((image, index) => {
             // Masonry-like layout: first image spans 2x2, 4th spans 2x1, others are 1x1
             const isLarge = index === 0;
             const isWide = index === 3;
             
             return (
               <div
-                key={`${imageId}-${index}`}
+                key={`${image.src}-${index}`}
                 className="relative overflow-hidden rounded-lg group cursor-pointer"
                 style={{
                   gridColumn: isLarge || isWide ? 'span 2' : 'span 1',
@@ -49,10 +45,11 @@ export function FloatingGallery() {
                 }}
               >
                 <Image
-                  src={image.imageUrl}
+                  src={image.src}
                   alt="Event highlight"
                   fill
                   className="object-cover hover:scale-110 transition-transform duration-500"
+                  unoptimized
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
               </div>

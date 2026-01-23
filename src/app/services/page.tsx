@@ -1,13 +1,13 @@
 import { SectionWrapper } from "@/components/shared/SectionWrapper";
 import { PageTitle } from "@/components/shared/PageTitle";
-import { ServiceTabs } from "@/components/services/ServiceTabs";
+import { ServiceStackCards } from "@/components/services/ServiceStackCards";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export default function ServicesPage() {
   return (
     <div>
-      <SectionWrapper className="bg-secondary/30">
+      <SectionWrapper className="bg-secondary/30 pb-8 md:pb-12">
         <PageTitle
           title="Our Services"
           subtitle="We design and deliver programs that bring psychological insights to real-world spaces, from classrooms and organizations to communities and research ecosystems."
@@ -21,7 +21,7 @@ export default function ServicesPage() {
             </Button>
           </div>
       </SectionWrapper>
-      <ServiceTabs />
+      <ServiceStackCards />
     </div>
   );
 }

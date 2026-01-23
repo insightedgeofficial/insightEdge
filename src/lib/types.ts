@@ -68,13 +68,18 @@ export type Milestone = {
   description: string;
 };
 
+export type EventImage = {
+  src: string;
+  geotag?: string;
+};
+
 export type PastEvent = {
   id: string;
   title: string;
   date: string;
   description: string;
   highlights?: string[];
-  images?: string[];
+  images?: EventImage[];
 };
 
 export type FullService = {

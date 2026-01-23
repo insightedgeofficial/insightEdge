@@ -7,7 +7,8 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { 
   GraduationCap, Building2, Heart, Briefcase, Globe, School,
-  Sparkles, ArrowRight, ArrowLeft, Star, TrendingUp, Shield, Zap
+  Sparkles, ArrowRight, ArrowLeft, Star, TrendingUp, Shield, Zap,
+  FileText, BarChart3, FileCheck
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -52,6 +53,11 @@ const microBenefits: Record<string, { icon: typeof Star; label: string }[]> = {
     { icon: Globe, label: 'Global Pathways' },
     { icon: Star, label: 'Personalized Guidance' },
     { icon: Sparkles, label: 'Expert Mentorship' },
+  ],
+  'Statistical Services (Research Support)': [
+    { icon: FileText, label: 'Study Design' },
+    { icon: BarChart3, label: 'Data Analysis' },
+    { icon: FileCheck, label: 'Reporting & Review' },
   ],
 };
 
@@ -331,7 +337,7 @@ export function ServiceCardStack() {
                     {isCurrent && (
                       <div className="mt-auto flex justify-end">
                         <Link
-                          href={service.ctaLink}
+                          href="/services"
                           className={cn(
                             "group flex items-center gap-1.5 text-primary font-semibold text-xs md:text-sm",
                             "transition-all duration-300 ease-out",
