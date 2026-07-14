@@ -19,7 +19,7 @@ export function ServicesTeaser() {
   }, []);
 
   return (
-    <SectionWrapper id="services" className="bg-secondary/30">
+    <SectionWrapper id="services" className="bg-still-deep text-morning-quiet">
       <div ref={ref} className={cn(animationClasses, "space-y-8 md:space-y-10")}>
         {/* Enhanced Heading Section */}
         <div className="text-center space-y-3">
@@ -38,7 +38,7 @@ export function ServicesTeaser() {
               )}
             />
           </div>
-          <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg text-muted-foreground leading-relaxed">
+          <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg text-morning-quiet/80 leading-relaxed">
             Tailored programs to bring psychological insights into your world.
           </p>
         </div>

@@ -8,7 +8,7 @@ import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { SectionWrapper } from "../shared/SectionWrapper";
 import { PageTitle } from "../shared/PageTitle";
-import { Calendar, MapPin } from "lucide-react";
+import { Calendar, MapPin } from '@phosphor-icons/react/dist/ssr';
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useEffect, useState } from "react";
 

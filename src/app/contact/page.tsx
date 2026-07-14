@@ -2,7 +2,7 @@ import { ContactForm } from "@/components/contact/ContactForm";
 import { PageTitle } from "@/components/shared/PageTitle";
 import { SectionWrapper } from "@/components/shared/SectionWrapper";
 import { socialLinks } from "@/lib/data";
-import { Mail, Phone } from "lucide-react";
+import { Envelope, Phone } from '@phosphor-icons/react/dist/ssr';
 import Link from "next/link";
 
 export default function ContactPage() {
@@ -18,14 +18,13 @@ export default function ContactPage() {
             <h3 className="font-headline text-2xl font-bold mb-6">Reach Us Directly</h3>
             <div className="space-y-4 text-muted-foreground">
               <div className="flex items-center gap-4">
-                <Mail className="h-5 w-5 text-primary"/>
+                <Envelope className="h-5 w-5 text-primary" weight="regular" />
                 <a href="mailto:insightedge.contact@gmail.com" className="hover:text-primary">insightedge.contact@gmail.com</a>
               </div>
               <div className="flex items-center gap-4">
-                <Phone className="h-5 w-5 text-primary"/>
+                <Phone className="h-5 w-5 text-primary" weight="regular" />
                 <div>
                   <p>+91 98404 21104</p>
-                  <p>+91 70412 30123</p>
                 </div>
               </div>
               <div>
@@ -37,7 +36,7 @@ export default function ContactPage() {
                 <div className="flex space-x-4">
                   {socialLinks.map((social) => (
                     <Link key={social.name} href={social.href} target="_blank" rel="noopener noreferrer" className="text-muted-foreground transition-colors hover:text-foreground">
-                      <social.icon className="h-6 w-6" />
+                      <social.icon className="h-6 w-6" weight="regular" />
                       <span className="sr-only">{social.name}</span>
                     </Link>
                   ))}

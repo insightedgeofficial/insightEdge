@@ -32,16 +32,22 @@ export function AboutCompany() {
         </h2>
         <div className="space-y-6 md:space-y-8 font-body">
           <p className="text-base md:text-lg lg:text-xl leading-[1.6] font-light text-foreground">
-            InsightEdge is a dynamic platform that bridges the gap between psychological theory and real-world application. We bring psychology out of the textbooks and into classrooms, workplaces, and communities through evidence-based workshops, therapy, and training experiences that drive meaningful change.
+            We live in a world that has learned to talk about mental health. What it hasn't learned yet, not fully, is how to listen.
           </p>
           <p className="text-base md:text-lg lg:text-xl leading-[1.6] font-light text-foreground">
-            At the heart of our work is a <strong className="font-semibold text-primary">dual focus</strong>: empowering future mental health professionals with practical skills and tools, while simultaneously raising awareness and breaking down barriers to mental health care within the broader community. We believe that psychology should be lived, not just learned—and accessible to everyone.
+            Insight Edge was created to close that gap. Not with campaigns. Not with hashtags. But with experience. With rooms full of real conversations. With tools that help people turn inward, without fear.
+          </p>
+          <p className="text-base md:text-lg lg:text-xl leading-[1.6] font-semibold text-foreground">
+            We are Experience Designers.
           </p>
           <p className="text-base md:text-lg lg:text-xl leading-[1.6] font-light text-foreground">
-            Our approach uniquely blends <strong className="font-semibold text-primary">rigorous, evidence-based methods</strong> with <strong className="font-semibold text-primary">creative, experiential learning</strong>. Every program we design is grounded in established psychological frameworks and behavioral science, yet delivered through innovative, engaging formats that make learning memorable and impactful.
+            People don't just remember what they're told. They remember what they experience.
           </p>
           <p className="text-base md:text-lg lg:text-xl leading-[1.6] font-light text-foreground">
-            Our vision is to create a world where mental health is normalized, psychological insights are accessible, and everyone has the tools they need to thrive. Through our workshops, training programs, and community initiatives, we're building a network of empowered individuals who can navigate life's challenges with confidence and support others along the way.
+            Everything we build reflects the kind of work we believe in. Because at the heart of Insight Edge, it isn't just psychology. It's the belief that when people understand themselves better, they begin to live, lead, and connect differently.
+          </p>
+          <p className="text-base md:text-lg lg:text-xl leading-[1.6] font-light text-foreground">
+            We build those conditions. And we train the next generation of psychologists to hold space for others with the same depth, skill, and care.
           </p>
         </div>
       </div>

@@ -4,7 +4,7 @@ import { fullServices } from "@/lib/data";
 import { SectionWrapper } from "../shared/SectionWrapper";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { Check, Users, Target, Clock, Tag, Handshake, FileText, BarChart3, FileCheck } from "lucide-react";
+import { Check, Users, Target, Clock, Tag, Handshake, ChartBar, GraduationCap, Buildings, Heart, Briefcase, Globe } from '@phosphor-icons/react/dist/ssr';
 import { Button } from "../ui/button";
 import Link from "next/link";
 
@@ -15,8 +15,7 @@ export function ServiceStackCards() {
     offset: ["start center", "end center"]
   });
 
-  // Calculate scroll room based on number of services - reduced for faster scrolling
-  const totalHeight = fullServices.length * 60; // 60vh per card for quicker transitions
+  const totalHeight = fullServices.length * 70; // 70vh per card for more white space
 
   return (
     <SectionWrapper 
@@ -46,6 +45,22 @@ export function ServiceStackCards() {
   );
 }
 
+const categoryIcons: Record<string, any> = {
+  Schools: GraduationCap,
+  Universities: Buildings,
+  'Rehab Centres': Heart,
+  NGOs: Users,
+  'Corporate Wellbeing': Briefcase,
+  'Study Abroad': Globe,
+  'Research Support': ChartBar,
+};
+
+/** Show one key point: first segment before comma or " / " */
+function oneKeyPoint(text: string): string {
+  const first = text.split(/[,/]/)[0]?.trim() ?? text;
+  return first.length > 0 ? first : text;
+}
+
 function StickyServiceCard({
   service,
   index,
@@ -58,6 +73,7 @@ function StickyServiceCard({
   scrollProgress: any;
 }) {
   const cardRef = useRef<HTMLDivElement>(null);
+  const ServiceIcon = categoryIcons[service.category] ?? Users;
   
   // Calculate scroll sections - faster transitions with compressed ranges
   const sectionHeight = 1 / totalCards;
@@ -114,7 +130,7 @@ function StickyServiceCard({
     >
       {/* Card Container */}
       <motion.div
-        className="w-full max-w-7xl mx-auto h-full rounded-[2.5rem] overflow-hidden flex flex-col my-2 md:my-4"
+        className="w-full max-w-[85rem] mx-auto h-full rounded-[2.5rem] overflow-hidden flex flex-col my-2 md:my-4"
         style={{
           backgroundColor: 'hsl(var(--background))',
           opacity: 1,
@@ -124,171 +140,60 @@ function StickyServiceCard({
           ),
         }}
       >
-        {/* Card Content */}
-        <div className="h-full p-6 md:p-8 lg:p-10 grid md:grid-cols-2 gap-6 md:gap-8">
-          {/* Left Column - Main Content */}
-          <div className="flex flex-col justify-between space-y-4 md:space-y-5 min-h-0">
-            <div className="flex flex-col space-y-4 md:space-y-5 flex-grow min-h-0">
-              {/* Service Title */}
-              <h2 
-                className="text-3xl md:text-4xl lg:text-5xl font-headline font-bold text-foreground flex-shrink-0"
-              >
-                {service.category}
-              </h2>
-
-              {/* Overview Description */}
-              <p 
-                className="text-base md:text-lg leading-relaxed font-body text-muted-foreground line-clamp-4 flex-shrink-0"
-                style={{ 
-                  lineHeight: '1.6',
-                }}
-              >
+        {/* Card Content - clean two-column layout */}
+        <div className="h-full flex flex-col md:flex-row overflow-hidden">
+          {/* Left: Title, overview, CTA - comfortable reading width */}
+          <div className="flex-1 min-w-0 p-6 md:p-8 lg:p-10 flex flex-col justify-between md:max-w-[50%]">
+            <div className="space-y-4 md:space-y-5">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <ServiceIcon className="h-6 w-6 md:h-7 md:w-7 text-primary" strokeWidth={1.5} />
+                </div>
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-headline font-bold text-foreground pt-1">
+                  {service.category}
+                </h2>
+              </div>
+              <p className="text-sm md:text-[15px] leading-relaxed text-muted-foreground" style={{ lineHeight: '1.6' }}>
                 {service.overview}
               </p>
             </div>
-
-            {/* CTA Button */}
-            <div className="pt-4 flex-shrink-0">
-              <Button 
-                asChild 
-                size="lg" 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg w-fit"
-              >
+            <div className="mt-6 md:mt-8 pt-6 border-t border-border/60">
+              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
                 <Link href={service.ctaLink}>
-                  <Handshake className="mr-2 h-4 w-4" /> 
-                  {service.cta}
+                  <Handshake className="mr-2 h-4 w-4" /> {service.cta}
                 </Link>
               </Button>
             </div>
           </div>
 
-          {/* Right Column - Details Grid */}
-          <div className="flex flex-col justify-start space-y-5 md:space-y-6 min-h-0">
-            {/* What You'll Gain */}
-            <div className="flex-shrink-0">
-              <h3 
-                className="font-semibold text-lg md:text-xl mb-3 flex items-center text-foreground"
-              >
-                <Check className="mr-2 h-5 w-5 text-primary" /> 
-                What You'll Gain
-              </h3>
-              {service.category === 'Statistical Services (Research Support)' ? (
-                // Show as pills/tags with icons for Statistical Services (matching ServiceCardStack pattern)
-                <div className="flex flex-wrap gap-1.5 mb-3">
-                  {service.outcomes.map((outcome, idx) => {
-                    // Map outcomes to icons
-                    let BenefitIcon;
-                    if (outcome === 'Study Design') {
-                      BenefitIcon = FileText;
-                    } else if (outcome === 'Data Analysis') {
-                      BenefitIcon = BarChart3;
-                    } else if (outcome === 'Reporting & Review') {
-                      BenefitIcon = FileCheck;
-                    } else {
-                      BenefitIcon = FileText;
-                    }
-                    
-                    return (
-                      <div
-                        key={idx}
-                        className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-background/40 backdrop-blur-sm border border-primary/25 text-foreground/90 transition-all duration-300 ease-out hover:scale-105 hover:shadow-md hover:border-primary/40 hover:bg-background/60"
-                        style={{
-                          backdropFilter: 'blur(8px)',
-                        }}
-                      >
-                        <BenefitIcon className="h-3 w-3 text-primary" />
-                        <span className="text-[10px] md:text-xs font-semibold">{outcome}</span>
-                      </div>
-                    );
-                  })}
-                </div>
-              ) : (
-                // Show as bullet list for other services
+          {/* Right: Outcomes + details in a single card-style block */}
+          <div className="flex-1 min-w-0 p-6 md:p-8 lg:p-10 md:pl-0 lg:pl-0 flex flex-col justify-center md:max-w-[50%]">
+            <div className="rounded-2xl bg-muted/40 border border-border/60 p-5 md:p-6 space-y-4 my-auto">
+              <div>
+                <h3 className="font-semibold text-foreground mb-2 flex items-center gap-2 text-xs uppercase tracking-wide text-muted-foreground">
+                  <Check className="h-3.5 w-3.5 text-primary" /> What you'll gain
+                </h3>
                 <ul className="space-y-1.5">
-                  {(service.outcomes.length > 4 
-                    ? service.outcomes.slice(0, 4) 
-                    : service.outcomes
-                  ).map((outcome, i) => (
-                    <li 
-                      key={i} 
-                      className="flex items-start text-muted-foreground"
-                    >
-                      <span className="text-primary mr-2 mt-1 flex-shrink-0">•</span>
-                      <span className="font-body text-sm md:text-base line-clamp-2">{outcome}</span>
+                  {service.outcomes.map((outcome, i) => (
+                    <li key={i} className="flex items-start gap-2 text-xs md:text-sm text-foreground/90">
+                      <span className="text-primary mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                      <span>{outcome}</span>
                     </li>
                   ))}
                 </ul>
-              )}
-            </div>
-
-            {/* Two Column Grid for Details */}
-            <div className="grid grid-cols-2 gap-4 md:gap-6 flex-shrink-0">
-              {/* Audience */}
-              <div className="flex items-start">
-                <Users className="h-4 w-4 md:h-5 md:w-5 mr-2 md:mr-3 mt-1 flex-shrink-0 text-primary" />
-                <div className="min-w-0">
-                  <h4 
-                    className="font-semibold mb-1.5 text-xs md:text-sm text-foreground"
-                  >
-                    Audience
-                  </h4>
-                  <p 
-                    className="text-xs font-body text-muted-foreground leading-relaxed line-clamp-4"
-                  >
-                    {service.audience}
-                  </p>
-                </div>
               </div>
-
-              {/* Format */}
-              <div className="flex items-start">
-                <Target className="h-4 w-4 md:h-5 md:w-5 mr-2 md:mr-3 mt-1 flex-shrink-0 text-primary" />
-                <div className="min-w-0">
-                  <h4 
-                    className="font-semibold mb-1.5 text-xs md:text-sm text-foreground"
-                  >
-                    Format
-                  </h4>
-                  <p 
-                    className="text-xs font-body text-muted-foreground leading-relaxed"
-                  >
-                    {service.format}
-                  </p>
-                </div>
-              </div>
-
-              {/* Duration */}
-              <div className="flex items-start">
-                <Clock className="h-4 w-4 md:h-5 md:w-5 mr-2 md:mr-3 mt-1 flex-shrink-0 text-primary" />
-                <div className="min-w-0">
-                  <h4 
-                    className="font-semibold mb-1.5 text-xs md:text-sm text-foreground"
-                  >
-                    Duration
-                  </h4>
-                  <p 
-                    className="text-xs font-body text-muted-foreground leading-relaxed line-clamp-2"
-                  >
-                    {service.duration}
-                  </p>
-                </div>
-              </div>
-
-              {/* Pricing */}
-              <div className="flex items-start">
-                <Tag className="h-4 w-4 md:h-5 md:w-5 mr-2 md:mr-3 mt-1 flex-shrink-0 text-primary" />
-                <div className="min-w-0">
-                  <h4 
-                    className="font-semibold mb-1.5 text-xs md:text-sm text-foreground"
-                  >
-                    Pricing
-                  </h4>
-                  <p 
-                    className="text-xs font-body text-muted-foreground leading-relaxed line-clamp-3"
-                  >
-                    {service.pricing}
-                  </p>
-                </div>
+              <div className="pt-3 border-t border-border/50">
+                <h3 className="font-semibold text-foreground mb-2 flex items-center gap-2 text-xs uppercase tracking-wide text-muted-foreground">
+                  <Target className="h-3.5 w-3.5 text-primary" /> Rooted in
+                </h3>
+                <ul className="space-y-1.5">
+                  {service.rootedIn.map((root, i) => (
+                    <li key={i} className="flex items-start gap-2 text-xs md:text-sm text-foreground/90">
+                      <span className="text-primary mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                      <span>{root}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>

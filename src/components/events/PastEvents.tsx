@@ -29,7 +29,7 @@ export function PastEvents() {
           subtitle="Explore our recent workshops, community sessions, and trainings." 
           className={`mb-12 transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} 
         />
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           {pastEvents.map((event, index) => (
             <PastEventCard key={event.id} event={event} index={index} isVisible={isVisible} />
           ))}
@@ -51,7 +51,7 @@ function PastEventCard({
   const [cardVisible, setCardVisible] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [imageError, setImageError] = useState(false);
-  
+
   // Get first non-HEIC image, or first image if no JPG/PNG available
   const firstImage = event.images && event.images.length > 0
     ? event.images.find(img => !img.src.toLowerCase().endsWith('.heic'))?.src || event.images[0].src
@@ -67,10 +67,10 @@ function PastEventCard({
   }, [isVisible, index]);
 
   return (
-    <Link href={`/events/past/${event.id}`}>
+    <Link href={`/events/past/${event.id}`} className="block">
       <Card
         className={cn(
-          "relative h-64 overflow-hidden cursor-pointer group transition-all duration-500 ease-out",
+          "relative h-56 sm:h-64 md:h-72 overflow-hidden cursor-pointer group transition-all duration-500 ease-out",
           cardVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
         )}
         style={{ transitionDelay: `${index * 100}ms` }}
@@ -99,7 +99,7 @@ function PastEventCard({
             />
             {/* Content */}
             <div className="absolute inset-0 flex flex-col justify-end p-4">
-              <h3 className="font-headline text-xl font-bold text-white mb-1">
+              <h3 className="font-headline text-lg md:text-xl font-bold text-white mb-1">
                 {event.title}
               </h3>
               <p className="text-sm text-white/90">{event.date}</p>
@@ -108,7 +108,7 @@ function PastEventCard({
         ) : (
           <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
             <div className="text-center p-4">
-              <h3 className="font-headline text-xl font-bold mb-1">
+              <h3 className="font-headline text-lg md:text-xl font-bold mb-1">
                 {event.title}
               </h3>
               <p className="text-sm text-muted-foreground">{event.date}</p>

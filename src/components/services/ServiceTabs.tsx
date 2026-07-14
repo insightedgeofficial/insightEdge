@@ -2,7 +2,7 @@ import { fullServices } from "@/lib/data";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { SectionWrapper } from "../shared/SectionWrapper";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
-import { Check, Users, Target, Clock, Tag, Handshake } from "lucide-react";
+import { Check, Users, Target, Clock, Tag, Handshake } from '@phosphor-icons/react/dist/ssr';
 import { Button } from "../ui/button";
 import Link from "next/link";
 
@@ -35,35 +35,15 @@ export function ServiceTabs() {
                     ))}
                   </ul>
                 </div>
-                <div className="space-y-6">
-                    <div className="flex items-start">
-                        <Users className="h-5 w-5 mr-3 mt-1 text-primary"/>
-                        <div>
-                            <h4 className="font-semibold">Audience</h4>
-                            <p className="text-muted-foreground">{service.audience}</p>
-                        </div>
-                    </div>
-                    <div className="flex items-start">
-                        <Target className="h-5 w-5 mr-3 mt-1 text-primary"/>
-                        <div>
-                            <h4 className="font-semibold">Format</h4>
-                            <p className="text-muted-foreground">{service.format}</p>
-                        </div>
-                    </div>
-                     <div className="flex items-start">
-                        <Clock className="h-5 w-5 mr-3 mt-1 text-primary"/>
-                        <div>
-                            <h4 className="font-semibold">Duration</h4>
-                            <p className="text-muted-foreground">{service.duration}</p>
-                        </div>
-                    </div>
-                    <div className="flex items-start">
-                        <Tag className="h-5 w-5 mr-3 mt-1 text-primary"/>
-                        <div>
-                            <h4 className="font-semibold">Pricing</h4>
-                            <p className="text-muted-foreground">{service.pricing}</p>
-                        </div>
-                    </div>
+                <div>
+                  <h3 className="font-semibold text-lg mb-4 flex items-center"><Target className="mr-2 h-5 w-5 text-primary"/> Rooted in</h3>
+                  <ul className="space-y-2 text-muted-foreground">
+                    {service.rootedIn.map((root, i) => (
+                      <li key={i} className="flex items-start">
+                        <span className="text-primary mr-2 mt-1">•</span>{root}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </CardContent>
               <div className="mt-8 text-center">

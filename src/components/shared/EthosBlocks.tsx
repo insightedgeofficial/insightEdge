@@ -20,7 +20,7 @@ export function EthosBlocks({ ethosBlocks, title }: EthosBlocksProps) {
         {ethosBlocks.map((block) => (
           <Card key={block.title} className="bg-background">
             <CardHeader>
-              <CardTitle className="font-headline text-2xl">{block.title}</CardTitle>
+              <CardTitle className="font-headline text-2xl text-felt">{block.title}</CardTitle>
               <CardDescription className="pt-2 text-base text-muted-foreground">{block.text}</CardDescription>
             </CardHeader>
           </Card>

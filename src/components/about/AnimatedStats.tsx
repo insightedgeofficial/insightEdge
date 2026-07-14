@@ -11,10 +11,10 @@ interface Stat {
 }
 
 const stats: Stat[] = [
-  { number: 500, label: 'Sessions Conducted', suffix: '+' },
-  { number: 200, label: 'Happy Clients', suffix: '+' },
-  { number: 50, label: 'Workshops Delivered', suffix: '+' },
-  { number: 15, label: 'Partner Organizations', suffix: '+' },
+  { number: 30, label: 'Workshops Conducted', suffix: '+' },
+  { number: 150, label: 'Happy Clients', suffix: '+' },
+  { number: 5, label: 'Partner Organisations & Institutions', suffix: '+' },
+  { number: 50, label: 'Students Mentored', suffix: '+' },
 ];
 
 function useCountUp(end: number, duration: number, start: boolean) {
@@ -68,9 +68,8 @@ export function AnimatedStats() {
   return (
     <div 
       ref={ref} 
-      className="w-full"
+      className="w-full bg-still-deep text-morning-quiet"
       style={{ 
-        backgroundColor: '#F9F7F2',
         paddingTop: '40px',
         paddingBottom: '40px',
         paddingLeft: '20px',
@@ -104,10 +103,10 @@ function StatItem({ stat, start, delay }: { stat: Stat; start: boolean; delay: n
         transitionDelay: `${delay}ms`,
       }}
     >
-      <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-2 font-headline">
+      <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-morning-quiet mb-2 font-headline">
         {count.toLocaleString()}{stat.suffix || ''}
       </div>
-      <div className="text-xs md:text-sm text-muted-foreground font-light font-body">
+      <div className="text-xs md:text-sm text-morning-quiet/80 font-light font-body">
         {stat.label}
       </div>
     </div>

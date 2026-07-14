@@ -4,7 +4,7 @@ import { testimonialsRow1, testimonialsRow2 } from "@/lib/data";
 import { SectionWrapper } from "../shared/SectionWrapper";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import Image from "next/image";
-import { Star } from "lucide-react";
+import { Star } from '@phosphor-icons/react/dist/ssr';
 
 export function Testimonials() {
   const { ref, animationClasses } = useScrollAnimation({
@@ -27,10 +27,8 @@ export function Testimonials() {
         {/* Static Header */}
         <div className="text-center mb-16 md:mb-20">
           {/* Heading */}
-          <h2 
-            className="text-4xl md:text-5xl lg:text-6xl font-headline font-bold text-foreground"
-          >
-            What our community says.
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-headline font-bold text-foreground">
+            What our community says
           </h2>
         </div>
 
@@ -131,7 +129,7 @@ function TestimonialCard({ testimonial }: { testimonial: { quote: string; author
         {[...Array(5)].map((_, i) => (
           <Star
             key={i}
-            className="w-3.5 h-3.5 fill-current text-primary"
+            className="w-3.5 h-3.5 fill-current text-felt"
           />
         ))}
       </div>
@@ -155,8 +153,6 @@ function TestimonialCard({ testimonial }: { testimonial: { quote: string; author
           className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 ring-2 ring-offset-2 border border-border/40"
           style={{
             backgroundColor: 'hsl(var(--muted))',
-            ringColor: 'hsl(var(--muted) / 0.3)',
-            ringOffsetColor: 'hsl(var(--background))',
           }}
         >
           {testimonial.image ? (

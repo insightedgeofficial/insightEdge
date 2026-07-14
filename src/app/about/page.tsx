@@ -4,6 +4,7 @@ import { AnimatedStats } from '@/components/about/AnimatedStats';
 import { VideoSection } from '@/components/about/VideoSection';
 import { AboutUsFlow } from '@/components/about/AboutUsFlow';
 import { OriginStory } from '@/components/about/OriginStory';
+import { MeetFounders } from '@/components/home/MeetFounders';
 
 export default function AboutPage() {
   return (
@@ -11,10 +12,11 @@ export default function AboutPage() {
       <div className="relative z-10">
         <VideoSection />
         <AboutHero />
-        <AnimatedStats />
         <AboutCompany />
-        <AboutUsFlow />
+        <AnimatedStats />
+        <MeetFounders />
         <OriginStory />
+        <AboutUsFlow />
       </div>
     </div>
   );

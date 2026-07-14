@@ -1,7 +1,7 @@
 'use client';
 
 import { SectionWrapper } from "../shared/SectionWrapper";
-import { Search, Palette, Rocket, Target } from "lucide-react";
+import { MagnifyingGlass, Palette, RocketLaunch, Target } from '@phosphor-icons/react/dist/ssr';
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
@@ -9,27 +9,27 @@ import { Card, CardContent } from "../ui/card";
 
 const flowSteps = [
   {
-    icon: Search,
+    icon: MagnifyingGlass,
     title: 'Research',
-    description: 'Evidence-based frameworks and behavioral science',
+    description: 'Sustainable frameworks built on evidence; finding the gaps that matter most.',
     color: 'from-primary/20 to-primary/10',
   },
   {
     icon: Palette,
     title: 'Design',
-    description: 'Creative approaches for engaging learning experiences',
+    description: 'Curated, personally tailored experiences built to fit the people in the room.',
     color: 'from-accent/20 to-accent/10',
   },
   {
-    icon: Rocket,
+    icon: RocketLaunch,
     title: 'Execute',
-    description: 'Programs delivered across schools, workplaces, and communities',
+    description: 'Programs delivered in schools, workplaces, and the communities that need them most.',
     color: 'from-primary/30 to-accent/30',
   },
   {
     icon: Target,
     title: 'Impact',
-    description: 'Empowered individuals and stronger communities',
+    description: 'Not numbers on a slide. Individuals empowered, communities made stronger.',
     color: 'from-accent/30 to-primary/20',
   },
 ];
@@ -55,7 +55,7 @@ export function AboutUsFlow() {
         <h2 
           className="font-headline text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 text-center tracking-tight text-foreground"
         >
-          About Us
+          How We Work
         </h2>
         <p 
           className="text-center mb-12 md:mb-16 max-w-2xl mx-auto text-base md:text-lg lg:text-xl leading-relaxed font-light text-muted-foreground"

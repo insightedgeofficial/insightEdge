@@ -43,14 +43,8 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
     imageHint: "woman portrait"
   },
   {
-    id: "team-saumika",
-    description: "Portrait of Saumika Venugopal",
-    imageUrl: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8d29tYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjM5NTk2MjN8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    imageHint: "woman portrait"
-  },
-  {
     id: "team-rishi",
-    description: "Portrait of Rishi Muthu",
+    description: "Portrait of Rishi Muthu Velkumar",
     imageUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjM5MjU3NzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
     imageHint: "man portrait"
   },
@@ -58,6 +52,12 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
     id: "team-kiran",
     description: "Portrait of Kiran Thulasiraman Reddy",
     imageUrl: "/team/Kiran.jpeg",
+    imageHint: "man portrait"
+  },
+  {
+    id: "team-priyesh",
+    description: "Portrait of Dr. Priyesh C.",
+    imageUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjM5MjU3NzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
     imageHint: "man portrait"
   },
   {

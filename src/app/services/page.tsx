@@ -7,12 +7,12 @@ import Link from "next/link";
 export default function ServicesPage() {
   return (
     <div>
-      <SectionWrapper className="bg-secondary/30 pb-8 md:pb-12">
+      <SectionWrapper className="bg-secondary/30 py-16 md:py-24 lg:py-28 pb-12 md:pb-16">
         <PageTitle
           title="Our Services"
           subtitle="We design and deliver programs that bring psychological insights to real-world spaces, from classrooms and organizations to communities and research ecosystems."
         />
-         <div className="mt-8 flex items-center justify-center gap-x-4">
+         <div className="mt-12 md:mt-16 flex items-center justify-center gap-x-4">
             <Button asChild size="lg" variant="outline">
               <Link href="/#services">See All Services</Link>
             </Button>

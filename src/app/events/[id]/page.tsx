@@ -7,7 +7,7 @@ import { PageTitle } from '@/components/shared/PageTitle';
 import { BackButton } from '@/components/shared/BackButton';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Calendar, MapPin, User, DollarSign, ExternalLink } from 'lucide-react';
+import { Calendar, MapPin, User, CurrencyDollar, ArrowSquareOut } from '@phosphor-icons/react/dist/ssr';
 import Link from 'next/link';
 import {
   Accordion,
@@ -117,7 +117,7 @@ export default async function EventPage({ params }: EventPageProps) {
               <Card>
                 <CardHeader>
                   <div className="flex items-center gap-3">
-                    <DollarSign className="h-5 w-5 text-primary" />
+                    <CurrencyDollar className="h-5 w-5 text-primary" />
                     <CardTitle className="text-xl">Pricing</CardTitle>
                   </div>
                 </CardHeader>
@@ -167,7 +167,7 @@ export default async function EventPage({ params }: EventPageProps) {
               <Button asChild size="lg" className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground">
                 <Link href={event.registrationLink} target="_blank" rel="noopener noreferrer">
                   Register Now
-                  <ExternalLink className="ml-2 h-4 w-4" />
+                  <ArrowSquareOut className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
             )}

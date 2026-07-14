@@ -11,8 +11,7 @@ export function AboutHero() {
   });
 
   return (
-    <SectionWrapper className="relative overflow-hidden" style={{ 
-      backgroundColor: '#F9F7F2',
+    <SectionWrapper className="relative overflow-hidden bg-still-ground text-morning-quiet" style={{ 
       paddingTop: '40px',
       paddingBottom: '40px',
       paddingLeft: '20px',
@@ -26,7 +25,7 @@ export function AboutHero() {
         )}
       >
         <p 
-          className="text-base md:text-lg lg:text-xl leading-relaxed font-light text-foreground"
+          className="text-base md:text-lg lg:text-xl leading-relaxed font-light text-morning-quiet"
           style={{ lineHeight: '1.6' }}
         >
           At InsightEdge, we're committed to fostering mental well-being and professional growth through a dual focus: empowering future mental health professionals and raising awareness within the broader community.

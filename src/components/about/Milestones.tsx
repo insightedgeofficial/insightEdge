@@ -1,7 +1,7 @@
 import { milestones } from "@/lib/data";
 import { SectionWrapper } from "../shared/SectionWrapper";
 import { PageTitle } from "../shared/PageTitle";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle } from '@phosphor-icons/react/dist/ssr';
 
 export function Milestones() {
   return (
@@ -17,7 +17,7 @@ export function Milestones() {
                 <p className="text-muted-foreground">{milestone.description}</p>
               </div>
               <div className="absolute left-1/2 -translate-x-1/2 bg-background p-1 rounded-full">
-                <CheckCircle2 className="w-8 h-8 text-primary fill-background stroke-primary" />
+                <CheckCircle className="w-8 h-8 text-primary fill-background stroke-primary" />
               </div>
               <div className="flex-1"></div>
             </div>

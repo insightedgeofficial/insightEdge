@@ -6,11 +6,11 @@ import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { SectionWrapper } from "../shared/SectionWrapper";
 import { PageTitle } from "../shared/PageTitle";
-import { Calendar, MapPin } from "lucide-react";
+import { Calendar, MapPin } from '@phosphor-icons/react/dist/ssr';
 
 export function EventDirectory() {
   return (
-    <SectionWrapper id="upcoming">
+    <SectionWrapper id="upcoming" className="bg-sage-mist">
       <PageTitle title="Upcoming Events" className="mb-12" />
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         {upcomingEvents.map((event) => {

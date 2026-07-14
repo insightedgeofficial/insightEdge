@@ -10,7 +10,7 @@ export default function TeamPage() {
       <SectionWrapper className="bg-secondary/30">
         <PageTitle
           title="Meet Our Team"
-          subtitle="A network of passionate psychologists, facilitators, and consultants dedicated to making psychology accessible and impactful."
+          subtitle="Every experience begins with the people behind it"
         />
       </SectionWrapper>
       <TeamGrid />

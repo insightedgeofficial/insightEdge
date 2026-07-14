@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { cn } from '@/lib/utils';
 import type { EventImage } from '@/lib/types';
 
 interface EventGalleryProps {
@@ -8,32 +9,51 @@ interface EventGalleryProps {
   eventTitle: string;
 }
 
+type TileSize = 'small' | 'wide' | 'tall' | 'large';
+
+function getTileSize(index: number): TileSize {
+  const pattern: TileSize[] = ['large', 'wide', 'tall', 'small', 'small', 'wide', 'tall'];
+  return pattern[index % pattern.length];
+}
+
 export function EventGallery({ images, eventTitle }: EventGalleryProps) {
   if (images.length === 0) return null;
 
   return (
     <div className="w-full">
-      <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4" style={{ columnGap: 0 }}>
-        {images.map((image, index) => (
-          <div
-            key={index}
-            className="relative mb-0 break-inside-avoid group cursor-pointer w-full"
-          >
-            <div className="relative w-full overflow-hidden rounded-sm">
+      <div
+        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 md:gap-3"
+        style={{
+          gridAutoRows: 'minmax(140px, 180px)',
+          gridAutoFlow: 'dense',
+        }}
+      >
+        {images.map((image, index) => {
+          const size = getTileSize(index);
+          return (
+            <div
+              key={index}
+              className={cn(
+                'relative overflow-hidden rounded-lg group cursor-pointer',
+                size === 'large' && 'col-span-2 row-span-2',
+                size === 'wide' && 'col-span-2 row-span-1',
+                size === 'tall' && 'col-span-1 row-span-2',
+                size === 'small' && 'col-span-1 row-span-1'
+              )}
+            >
               <Image
                 src={image.src}
                 alt={`${eventTitle} - Image ${index + 1}`}
-                width={800}
-                height={1200}
-                className="w-full h-auto object-cover transition-all duration-300 group-hover:scale-105 group-hover:brightness-110"
+                fill
+                sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 25vw"
+                className="object-cover transition-all duration-300 group-hover:scale-105 group-hover:brightness-105"
                 unoptimized
                 loading="lazy"
               />
-              {/* Subtle overlay on hover */}
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 pointer-events-none" />
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

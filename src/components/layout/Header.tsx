@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { List, X } from '@phosphor-icons/react/dist/ssr';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
@@ -81,8 +81,8 @@ export function Header() {
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
                 <SheetTrigger asChild className="md:hidden">
                     <Button variant="ghost" size="icon">
-                    <Menu className="h-6 w-6" />
-                    <span className="sr-only">Toggle Menu</span>
+                    <List className="h-6 w-6" />
+                    <span className="sr-only">Toggle List</span>
                     </Button>
                 </SheetTrigger>
                 <SheetContent side="right" className="w-full max-w-xs bg-background">
@@ -93,7 +93,7 @@ export function Header() {
                             </Link>
                             <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)}>
                                 <X className="h-6 w-6" />
-                                <span className="sr-only">Close Menu</span>
+                                <span className="sr-only">Close List</span>
                             </Button>
                         </div>
                         <nav className="mt-6 flex flex-col space-y-4">

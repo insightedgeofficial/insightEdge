@@ -1,4 +1,4 @@
-import type { LucideIcon } from 'lucide-react';
+import type { Icon } from '@phosphor-icons/react/dist/ssr';
 
 export type NavLink = {
   href: string;
@@ -6,7 +6,7 @@ export type NavLink = {
 };
 
 export type ValueBlock = {
-  icon: LucideIcon;
+  icon: Icon;
   title: string;
   text: string;
 };
@@ -86,10 +86,7 @@ export type FullService = {
   category: string;
   overview: string;
   outcomes: string[];
-  audience: string;
-  format: string;
-  duration: string;
-  pricing: string;
+  rootedIn: string[];
   cta: string;
   ctaLink: string;
 };

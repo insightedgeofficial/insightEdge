@@ -11,7 +11,9 @@ export default function FaqPage() {
                 subtitle="Find answers to common questions about our programs, booking process, and how we work."
             />
         </SectionWrapper>
-        <FaqAccordion />
+        <SectionWrapper className="bg-muted/20 py-12 md:py-16">
+            <FaqAccordion />
+        </SectionWrapper>
     </div>
   );
 }

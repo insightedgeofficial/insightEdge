@@ -22,7 +22,7 @@ export function MeetFounders() {
     <SectionWrapper>
       <div ref={sectionRef}>
         <PageTitle 
-          title="About the Founders" 
+          title="Meet our Founders" 
           subtitle="Founded by psychology graduates from Sri Ramachandra Institute of Higher Education and Research, InsightEdge is built on the principles of empowering psychology students. Our goal is to provide guidance, resources, and hands-on learning experiences that support their academic and professional journeys." 
           className={`mb-12 transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
         />
@@ -30,11 +30,6 @@ export function MeetFounders() {
           {founders.map((founder, index) => (
             <FounderCard key={founder.name} founder={founder} index={index} isVisible={isVisible} />
           ))}
-        </div>
-        <div className={`mt-12 text-center transition-all duration-700 ease-out delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-          <Button asChild size="lg" variant="outline">
-            <Link href="/about">Learn More About Us →</Link>
-          </Button>
         </div>
       </div>
     </SectionWrapper>

@@ -1,6 +1,6 @@
 import { SectionWrapper } from "../shared/SectionWrapper";
 import { PageTitle } from "../shared/PageTitle";
-import { Check } from "lucide-react";
+import { Check } from '@phosphor-icons/react/dist/ssr';
 
 export function Safeguarding() {
   const commitments = [
