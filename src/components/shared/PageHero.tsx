@@ -50,9 +50,14 @@ export function PageHero({
         />
       </div>
 
-      <div className="container relative z-10 mx-auto px-4 md:px-6 lg:px-8 text-center">
+      <motion.div
+        initial={{ opacity: 0, y: 32 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
+        className="container relative z-10 mx-auto px-4 md:px-6 lg:px-8 text-center"
+      >
         {/* Reusable radial gradient text overlay - unobtrusive, seamless fadeout with zero geometric edges */}
-        <div 
+        <div
           className={cn(
             "max-w-4xl mx-auto space-y-5 py-6 px-4 bg-[radial-gradient(ellipse_at_center,_rgba(24,61,44,0.28)_0%,_rgba(24,61,44,0.12)_45%,_rgba(24,61,44,0)_75%)]",
             contentClassName
@@ -93,7 +98,7 @@ export function PageHero({
             ))}
           </div>
         )}
-      </div>
+      </motion.div>
     </section>
   );
 }

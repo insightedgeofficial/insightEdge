@@ -1,54 +1,37 @@
-import { upcomingEvents } from "@/lib/data";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+'use client';
+
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import Image from "next/image";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { motion } from "framer-motion";
+import { hoverPop, hoverPopCard } from "@/lib/hover-animation";
 import { SectionWrapper } from "../shared/SectionWrapper";
-import { PageTitle } from "../shared/PageTitle";
-import { Calendar, MapPin } from '@phosphor-icons/react/dist/ssr';
 
 export function EventDirectory() {
   return (
     <SectionWrapper id="upcoming" className="bg-sage-mist">
-      <PageTitle title="Upcoming Events" className="mb-12" />
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {upcomingEvents.map((event) => {
-          const image = PlaceHolderImages.find(p => p.id === event.image);
-          return (
-            <Card key={event.title} className="overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-              {image && (
-                <Image
-                  src={image.imageUrl}
-                  alt={image.description}
-                  data-ai-hint={image.imageHint}
-                  width={600}
-                  height={400}
-                  className="w-full h-48 object-cover"
-                />
-              )}
-              <CardHeader>
-                <CardTitle className="font-headline text-xl">{event.title}</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-2 text-sm text-muted-foreground">
-                <div className="flex items-center gap-2">
-                  <Calendar className="h-4 w-4" />
-                  <span>{event.date}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <MapPin className="h-4 w-4" />
-                  <span>{event.location}</span>
-                </div>
-              </CardContent>
-              <CardFooter>
-                <Button asChild variant="outline" className="w-full">
-                  <Link href={event.href}>Get More Details</Link>
-                </Button>
-              </CardFooter>
-            </Card>
-          );
-        })}
-      </div>
+      <motion.div
+        whileHover={hoverPopCard.whileHover}
+        transition={hoverPopCard.transition}
+        className="text-center bg-primary/10 p-10 md:p-14 rounded-2xl border border-primary/20 shadow-sm hover:shadow-lg transition-shadow cursor-pointer max-w-3xl mx-auto"
+      >
+        <h2 className="text-3xl md:text-4xl font-bold font-headline mb-4 text-foreground">
+          Something Exciting Is Brewing! 🌿
+        </h2>
+        <p className="text-muted-foreground text-base md:text-lg mb-8 max-w-2xl mx-auto font-light">
+          We've got a lineup of workshops, trainings, and events coming your way over the next few months.
+          <br />
+          Tap below to check out all the details and grab your spot.
+        </p>
+        <motion.div
+          whileHover={hoverPop.whileHover}
+          transition={hoverPop.transition}
+          className="inline-block"
+        >
+          <Button asChild size="lg" className="h-12 md:h-14 px-8 text-base md:text-lg font-bold bg-primary hover:bg-primary/90 text-primary-foreground shadow-md hover:shadow-lg rounded-xl">
+            <Link href="#">Explore Events & Registrations</Link>
+          </Button>
+        </motion.div>
+      </motion.div>
     </SectionWrapper>
   );
 }
