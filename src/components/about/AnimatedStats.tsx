@@ -68,13 +68,7 @@ export function AnimatedStats() {
   return (
     <div 
       ref={ref} 
-      className="w-full bg-still-deep text-morning-quiet"
-      style={{ 
-        paddingTop: '40px',
-        paddingBottom: '40px',
-        paddingLeft: '20px',
-        paddingRight: '20px',
-      }}
+      className="w-full bg-still-deep text-morning-quiet py-12 md:py-16 px-4 md:px-8"
     >
       <div className={cn(
         "grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-5xl mx-auto",

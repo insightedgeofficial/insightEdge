@@ -102,34 +102,34 @@ export function ContactForm() {
   }
 
   return (
-    <Card>
+    <Card className="shadow-sm border border-border">
       <CardHeader>
-        <CardTitle className="font-headline text-2xl">Get in Touch</CardTitle>
+        <CardTitle className="font-headline text-2xl md:text-3xl font-bold text-foreground">Get in Touch</CardTitle>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="space-y-2">
-            <Label htmlFor="name">Name</Label>
-            <Input id="name" name="name" required />
+            <Label htmlFor="name" className="text-base font-medium">Name</Label>
+            <Input id="name" name="name" required className="h-12 text-base" />
             {errors.name && <p className="text-sm text-destructive">{errors.name}</p>}
           </div>
           <div className="space-y-2">
-            <Label htmlFor="email">Email</Label>
-            <Input id="email" name="email" type="email" required />
+            <Label htmlFor="email" className="text-base font-medium">Email</Label>
+            <Input id="email" name="email" type="email" required className="h-12 text-base" />
             {errors.email && <p className="text-sm text-destructive">{errors.email}</p>}
           </div>
           <div className="space-y-2">
-            <Label htmlFor="phone">Phone Number (Optional)</Label>
-            <Input id="phone" name="phone" type="tel" />
+            <Label htmlFor="phone" className="text-base font-medium">Phone Number (Optional)</Label>
+            <Input id="phone" name="phone" type="tel" className="h-12 text-base" />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="organization">Organization (Optional)</Label>
-            <Input id="organization" name="organization" />
+            <Label htmlFor="organization" className="text-base font-medium">Organization (Optional)</Label>
+            <Input id="organization" name="organization" className="h-12 text-base" />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="topic">Topic</Label>
+            <Label htmlFor="topic" className="text-base font-medium">Topic</Label>
             <Select name="topic" required>
-                <SelectTrigger id="topic" className={cn(errors.topic && "border-destructive")}>
+                <SelectTrigger id="topic" className={cn("h-12 text-base", errors.topic && "border-destructive")}>
                     <SelectValue placeholder="Select a topic" />
                 </SelectTrigger>
                 <SelectContent>
@@ -143,12 +143,12 @@ export function ContactForm() {
             {errors.topic && <p className="text-sm text-destructive">{errors.topic}</p>}
           </div>
           <div className="space-y-2">
-            <Label htmlFor="message">Message</Label>
-            <Textarea id="message" name="message" rows={5} placeholder="Tell us more about your inquiry..." required />
+            <Label htmlFor="message" className="text-base font-medium">Message</Label>
+            <Textarea id="message" name="message" rows={5} placeholder="Tell us more about your inquiry..." required className="text-base leading-relaxed" />
             {errors.message && <p className="text-sm text-destructive">{errors.message}</p>}
           </div>
-          <Button type="submit" disabled={isSubmitting} className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
-            {isSubmitting ? <Spinner className="mr-2 h-4 w-4 animate-spin" /> : null}
+          <Button type="submit" disabled={isSubmitting} className="w-full h-12 md:h-14 text-base md:text-lg font-bold bg-primary hover:bg-primary/90 text-primary-foreground shadow-md rounded-xl">
+            {isSubmitting ? <Spinner className="mr-2 h-5 w-5 animate-spin" /> : null}
             Send Message
           </Button>
         </form>

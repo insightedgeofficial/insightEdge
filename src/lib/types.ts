@@ -1,4 +1,7 @@
-import type { Icon } from '@phosphor-icons/react/dist/ssr';
+import type { IconProps } from '@phosphor-icons/react';
+import type { ComponentType } from 'react';
+
+export type Icon = ComponentType<IconProps>;
 
 export type NavLink = {
   href: string;

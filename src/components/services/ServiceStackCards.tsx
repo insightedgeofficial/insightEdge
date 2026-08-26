@@ -119,77 +119,76 @@ function StickyServiceCard({
   return (
     <motion.div
       ref={cardRef}
-      className="sticky top-16 w-full flex items-center justify-center px-4 md:px-6 py-4 md:py-6"
+      className="sticky top-16 w-full flex items-center justify-center px-4 md:px-6 py-2 md:py-4"
       style={{
-        zIndex: safeZIndex, // Cap at 40, well below header's z-50
+        zIndex: safeZIndex,
         scale,
         opacity: 1,
-        height: 'calc(100vh - 4rem)',
-        position: 'sticky', // Explicitly set position
+        height: 'calc(100vh - 5rem)',
+        position: 'sticky',
       }}
     >
-      {/* Card Container */}
+      {/* Card Container - bg-sage-mist warm green background harmonized with cream page */}
       <motion.div
-        className="w-full max-w-[85rem] mx-auto h-full rounded-[2.5rem] overflow-hidden flex flex-col my-2 md:my-4"
+        className="w-full max-w-[82rem] mx-auto max-h-[540px] md:max-h-[580px] rounded-[2rem] overflow-hidden flex flex-col bg-sage-mist text-still-ground border border-still-ground/20"
         style={{
-          backgroundColor: 'hsl(var(--background))',
           opacity: 1,
           boxShadow: useTransform(
             shadowIntensity,
-            (intensity) => `0 ${20 * intensity}px ${40 * intensity}px rgba(0, 0, 0, ${0.15 * intensity}), 0 ${10 * intensity}px ${20 * intensity}px rgba(0, 0, 0, ${0.1 * intensity})`
+            (intensity) => `0 ${20 * intensity}px ${40 * intensity}px rgba(0, 0, 0, ${0.12 * intensity}), 0 ${10 * intensity}px ${20 * intensity}px rgba(0, 0, 0, ${0.08 * intensity})`
           ),
         }}
       >
         {/* Card Content - clean two-column layout */}
-        <div className="h-full flex flex-col md:flex-row overflow-hidden">
-          {/* Left: Title, overview, CTA - comfortable reading width */}
-          <div className="flex-1 min-w-0 p-6 md:p-8 lg:p-10 flex flex-col justify-between md:max-w-[50%]">
-            <div className="space-y-4 md:space-y-5">
+        <div className="h-full flex flex-col md:flex-row overflow-y-auto md:overflow-hidden p-6 md:p-8 lg:p-10 gap-6 md:gap-8">
+          {/* Left: Title, overview, CTA */}
+          <div className="flex-1 min-w-0 flex flex-col justify-between md:max-w-[50%]">
+            <div className="space-y-3 md:space-y-4">
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-xl bg-primary/10 flex items-center justify-center">
-                  <ServiceIcon className="h-6 w-6 md:h-7 md:w-7 text-primary" strokeWidth={1.5} />
+                <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-xl bg-still-ground/15 flex items-center justify-center shadow-sm">
+                  <ServiceIcon className="h-6 w-6 md:h-7 md:w-7 text-still-ground" strokeWidth={1.5} />
                 </div>
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-headline font-bold text-foreground pt-1">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-headline font-bold text-still-ground pt-1">
                   {service.category}
                 </h2>
               </div>
-              <p className="text-sm md:text-[15px] leading-relaxed text-muted-foreground" style={{ lineHeight: '1.6' }}>
+              <p className="text-sm md:text-[15px] leading-relaxed text-still-ground/90 font-medium" style={{ lineHeight: '1.6' }}>
                 {service.overview}
               </p>
             </div>
-            <div className="mt-6 md:mt-8 pt-6 border-t border-border/60">
-              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+            <div className="mt-4 pt-4 border-t border-still-ground/20">
+              <Button asChild size="lg" className="h-12 md:h-13 px-6 text-base font-bold bg-still-ground hover:bg-still-ground/90 text-morning-quiet shadow-md rounded-xl">
                 <Link href={service.ctaLink}>
-                  <Handshake className="mr-2 h-4 w-4" /> {service.cta}
+                  <Handshake className="mr-2.5 h-5 w-5 text-morning-quiet" /> {service.cta}
                 </Link>
               </Button>
             </div>
           </div>
 
-          {/* Right: Outcomes + details in a single card-style block */}
-          <div className="flex-1 min-w-0 p-6 md:p-8 lg:p-10 md:pl-0 lg:pl-0 flex flex-col justify-center md:max-w-[50%]">
-            <div className="rounded-2xl bg-muted/40 border border-border/60 p-5 md:p-6 space-y-4 my-auto">
+          {/* Right: Outcomes + details in a warm cream card-style block */}
+          <div className="flex-1 min-w-0 p-2 md:p-4 flex flex-col justify-center md:max-w-[50%]">
+            <div className="rounded-2xl bg-morning-quiet/90 border border-still-ground/20 p-5 md:p-6 space-y-4 my-auto shadow-sm">
               <div>
-                <h3 className="font-semibold text-foreground mb-2 flex items-center gap-2 text-xs uppercase tracking-wide text-muted-foreground">
-                  <Check className="h-3.5 w-3.5 text-primary" /> What you'll gain
+                <h3 className="font-bold text-still-ground mb-2.5 flex items-center gap-2 text-xs uppercase tracking-wider">
+                  <Check className="h-4 w-4 text-still-ground" strokeWidth={2} /> What you'll gain
                 </h3>
-                <ul className="space-y-1.5">
+                <ul className="space-y-2">
                   {service.outcomes.map((outcome, i) => (
-                    <li key={i} className="flex items-start gap-2 text-xs md:text-sm text-foreground/90">
-                      <span className="text-primary mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                    <li key={i} className="flex items-start gap-2.5 text-xs md:text-sm text-still-ground/90 font-medium">
+                      <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-still-ground flex-shrink-0" />
                       <span>{outcome}</span>
                     </li>
                   ))}
                 </ul>
               </div>
-              <div className="pt-3 border-t border-border/50">
-                <h3 className="font-semibold text-foreground mb-2 flex items-center gap-2 text-xs uppercase tracking-wide text-muted-foreground">
-                  <Target className="h-3.5 w-3.5 text-primary" /> Rooted in
+              <div className="pt-3.5 border-t border-still-ground/20">
+                <h3 className="font-bold text-still-ground mb-2.5 flex items-center gap-2 text-xs uppercase tracking-wider">
+                  <Target className="h-4 w-4 text-still-ground" strokeWidth={2} /> Rooted in
                 </h3>
-                <ul className="space-y-1.5">
+                <ul className="space-y-2">
                   {service.rootedIn.map((root, i) => (
-                    <li key={i} className="flex items-start gap-2 text-xs md:text-sm text-foreground/90">
-                      <span className="text-primary mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                    <li key={i} className="flex items-start gap-2.5 text-xs md:text-sm text-still-ground/90 font-medium">
+                      <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-still-ground flex-shrink-0" />
                       <span>{root}</span>
                     </li>
                   ))}

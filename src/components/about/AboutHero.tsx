@@ -11,26 +11,21 @@ export function AboutHero() {
   });
 
   return (
-    <SectionWrapper className="relative overflow-hidden bg-still-ground text-morning-quiet" style={{ 
-      paddingTop: '40px',
-      paddingBottom: '40px',
-      paddingLeft: '20px',
-      paddingRight: '20px',
-    }}>
+    <section className="w-full bg-sage-mist text-still-ground py-8 md:py-10 px-6 md:px-12 border-y border-still-ground/15">
       <div 
         ref={ref} 
         className={cn(
-          "relative text-center max-w-3xl mx-auto font-body",
+          "relative text-center max-w-4xl mx-auto font-body",
           animationClasses
         )}
       >
         <p 
-          className="text-base md:text-lg lg:text-xl leading-relaxed font-light text-morning-quiet"
-          style={{ lineHeight: '1.6' }}
+          className="text-base md:text-lg lg:text-xl leading-relaxed font-normal text-still-ground/90"
+          style={{ lineHeight: '1.65' }}
         >
           At InsightEdge, we're committed to fostering mental well-being and professional growth through a dual focus: empowering future mental health professionals and raising awareness within the broader community.
         </p>
       </div>
-    </SectionWrapper>
+    </section>
   );
 }

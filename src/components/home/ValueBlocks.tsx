@@ -20,7 +20,7 @@ export function ValueBlocks() {
           title="What Makes Us Different?" 
           className={`mb-12 transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} 
         />
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid items-stretch gap-8 md:grid-cols-2 lg:grid-cols-4">
           {valueBlocks.map((block, index) => (
             <ValueBlockCard 
               key={block.title} 
@@ -49,7 +49,7 @@ function ValueBlockCard({ block, index, isVisible }: { block: typeof valueBlocks
 
   return (
     <Card 
-      className={`text-center transform transition-all duration-500 ease-out hover:scale-105 hover:shadow-xl ${
+      className={`text-center h-full flex flex-col justify-between transform transition-all duration-500 ease-out hover:scale-105 hover:shadow-xl ${
         cardVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
       style={{ transitionDelay: `${index * 100}ms` }}

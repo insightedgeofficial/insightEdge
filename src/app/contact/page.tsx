@@ -1,5 +1,5 @@
 import { ContactForm } from "@/components/contact/ContactForm";
-import { PageTitle } from "@/components/shared/PageTitle";
+import { PageHero } from "@/components/shared/PageHero";
 import { SectionWrapper } from "@/components/shared/SectionWrapper";
 import { socialLinks } from "@/lib/data";
 import { Envelope, Phone } from '@phosphor-icons/react/dist/ssr';
@@ -8,9 +8,11 @@ import Link from "next/link";
 export default function ContactPage() {
   return (
     <div>
-      <SectionWrapper className="bg-secondary/30">
-        <PageTitle title="Let's Connect" subtitle="Have a question or want to work together? We'd love to hear from you." />
-      </SectionWrapper>
+      <PageHero
+        backgroundImageSrc="/letsconnect_page.jpeg"
+        title="Let's Connect"
+        description="Have a question or want to work together? We'd love to hear from you."
+      />
       <SectionWrapper>
         <div className="grid lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
           <ContactForm />

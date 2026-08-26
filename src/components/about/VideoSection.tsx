@@ -55,17 +55,12 @@ export function VideoSection({
     <div 
       ref={ref}
       className={cn(
-        "w-full relative flex items-center justify-center",
+        "w-full relative flex items-center justify-center py-12 md:py-16 px-4 md:px-8",
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       )}
       style={{
         transition: 'opacity 1s ease-out, transform 1s ease-out',
         backgroundColor: '#F9F7F2',
-        paddingTop: '40px',
-        paddingBottom: '40px',
-        paddingLeft: '20px',
-        paddingRight: '20px',
-        minHeight: 'auto',
       }}
     >
       {/* Background Image with Reduced Opacity - Section Level */}

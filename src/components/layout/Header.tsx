@@ -5,10 +5,13 @@ import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import { List, X } from '@phosphor-icons/react/dist/ssr';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import { navLinks } from '@/lib/data';
 import { Logo } from '../Logo';
+
+import { motion } from 'framer-motion';
+import { hoverPop } from '@/lib/hover-animation';
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,12 +51,12 @@ export function Header() {
         isVisible ? 'translate-y-0' : '-translate-y-full'
       )}
     >
-      <div className="container flex h-16 max-w-screen-2xl items-center justify-between">
+      <div className="container flex h-14 md:h-16 lg:h-17 max-w-screen-2xl items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           <Logo />
         </Link>
 
-        <nav className="hidden md:flex items-center space-x-8 text-sm font-medium">
+        <nav className="hidden md:flex items-center space-x-3 lg:space-x-6 xl:space-x-8 text-sm md:text-base font-semibold">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -61,8 +64,8 @@ export function Header() {
               className={cn(
                 'relative transition-all duration-300 ease-out py-1',
                 pathname === link.href 
-                  ? 'text-foreground font-semibold' 
-                  : 'text-foreground/60 hover:text-foreground/90'
+                  ? 'text-foreground font-bold' 
+                  : 'text-foreground/70 hover:text-foreground'
               )}
             >
               {link.label}
@@ -75,9 +78,15 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-4">
-            <Button asChild className="hidden md:flex bg-primary hover:bg-primary/90 text-primary-foreground shadow-md hover:shadow-lg transition-all duration-300 font-semibold">
-                <Link href="/contact">Book a Workshop</Link>
-            </Button>
+            <motion.div
+              whileHover={hoverPop.whileHover}
+              transition={hoverPop.transition}
+              className="hidden md:flex"
+            >
+              <Button asChild className="h-10 md:h-11 px-5 text-sm md:text-base font-semibold bg-primary hover:bg-primary/90 text-primary-foreground shadow-sm hover:shadow-md rounded-lg">
+                  <Link href="/contact">Book a Workshop</Link>
+              </Button>
+            </motion.div>
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
                 <SheetTrigger asChild className="md:hidden">
                     <Button variant="ghost" size="icon">
@@ -86,6 +95,9 @@ export function Header() {
                     </Button>
                 </SheetTrigger>
                 <SheetContent side="right" className="w-full max-w-xs bg-background">
+                    <SheetHeader className="sr-only">
+                        <SheetTitle>Navigation Menu</SheetTitle>
+                    </SheetHeader>
                     <div className="flex h-full flex-col">
                         <div className="flex items-center justify-between border-b pb-4">
                             <Link href="/" onClick={() => setIsOpen(false)}>

@@ -23,7 +23,7 @@ export function Testimonials() {
         backgroundColor: 'hsl(var(--background))', // Website beige
       }}
     >
-      <div ref={ref} className={`container mx-auto px-4 md:px-6 ${animationClasses}`}>
+      <div ref={ref} className={animationClasses}>
         {/* Static Header */}
         <div className="text-center mb-16 md:mb-20">
           {/* Heading */}
@@ -100,6 +100,7 @@ function TestimonialCard({ testimonial }: { testimonial: { quote: string; author
         gap: '0.875rem',
         width: '380px',
         minWidth: '380px',
+        maxWidth: 'calc(100vw - 2rem)',
         minHeight: 'fit-content',
         boxShadow: '0 4px 12px rgba(0, 0, 0, 0.06), 0 2px 4px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(142, 71, 55, 0.05)',
         transform: 'perspective(1000px) rotateY(0deg) translateZ(0)',

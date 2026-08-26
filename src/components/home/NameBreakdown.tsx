@@ -3,6 +3,8 @@
 import { SectionWrapper } from '../shared/SectionWrapper';
 import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 import { BookOpen, MapTrifold, ShieldCheck, ChartLineUp } from '@phosphor-icons/react/dist/ssr';
+import { motion } from 'framer-motion';
+import { hoverPop } from '@/lib/hover-animation';
 
 const philosophyCards = [
   {
@@ -35,9 +37,9 @@ export function NameBreakdown() {
 
   return (
     <SectionWrapper 
-      className="relative py-24 md:py-32 lg:py-40 overflow-hidden bg-cleared text-still-deep"
+      className="relative py-24 md:py-32 lg:py-40 overflow-hidden bg-background text-foreground"
     >
-      <div ref={sectionRef} className="container mx-auto px-4 md:px-6 relative z-10">
+      <div ref={sectionRef} className="relative z-10">
         <div className="max-w-7xl mx-auto">
           {/* Static Section Introduction */}
           <div
@@ -48,7 +50,7 @@ export function NameBreakdown() {
             <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start relative">
               {/* Heading - Left aligned */}
               <div>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-headline font-bold text-still-deep text-left">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-headline font-bold text-foreground text-left">
                   The InsightEdge Philosophy
                 </h2>
               </div>
@@ -56,7 +58,7 @@ export function NameBreakdown() {
               {/* Paragraph - Right aligned */}
               <div className="text-left md:text-right relative z-10">
                 <p 
-                  className="text-base md:text-lg leading-relaxed font-body text-still-deep"
+                  className="text-base md:text-lg leading-relaxed font-body text-muted-foreground"
                   style={{
                     lineHeight: '1.8',
                   }}
@@ -68,27 +70,29 @@ export function NameBreakdown() {
           </div>
 
           {/* Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 items-stretch gap-6 lg:gap-8 relative z-10">
             {philosophyCards.map((card, index) => {
               const Icon = card.icon;
               return (
-                <div 
+                <motion.div 
                   key={index}
-                  className={`bg-morning-quiet border border-still-deep/10 rounded-2xl p-6 md:p-8 flex flex-col gap-4 shadow-sm hover:shadow-md transition-all duration-500 ease-out ${
+                  whileHover={hoverPop.whileHover}
+                  transition={hoverPop.transition}
+                  className={`bg-card border border-border/60 rounded-2xl p-6 md:p-8 flex flex-col justify-between gap-4 h-full shadow-sm hover:shadow-lg transition-shadow duration-300 ease-out ${
                     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                   }`}
                   style={{ transitionDelay: `${index * 150}ms` }}
                 >
-                  <div className="bg-still-deep/5 p-3 rounded-xl w-fit">
-                    <Icon className="w-6 h-6 md:w-8 md:h-8 text-still-deep" weight="regular" />
+                  <div className="bg-primary/10 p-3 rounded-xl w-fit">
+                    <Icon className="w-6 h-6 md:w-8 md:h-8 text-primary" weight="regular" />
                   </div>
-                  <h3 className="font-headline font-bold text-xl md:text-2xl text-still-ground">
+                  <h3 className="font-headline font-bold text-xl md:text-2xl text-foreground">
                     {card.title}
                   </h3>
-                  <p className="font-body text-still-ground/80 text-sm md:text-base leading-relaxed">
+                  <p className="font-body text-muted-foreground text-sm md:text-base leading-relaxed">
                     {card.description}
                   </p>
-                </div>
+                </motion.div>
               );
             })}
           </div>

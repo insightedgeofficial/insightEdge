@@ -1,15 +1,9 @@
 'use client';
 
-import { founders } from "@/lib/data";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { SectionWrapper } from "../shared/SectionWrapper";
-import { PageTitle } from "../shared/PageTitle";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
-import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
 export function MeetFounders() {
@@ -18,70 +12,52 @@ export function MeetFounders() {
     animationType: 'fade-up',
   });
 
+  const combinedImage = PlaceHolderImages.find(p => p.id === "founders-candid");
+
   return (
-    <SectionWrapper>
-      <div ref={sectionRef}>
-        <PageTitle 
-          title="Meet our Founders" 
-          subtitle="Founded by psychology graduates from Sri Ramachandra Institute of Higher Education and Research, InsightEdge is built on the principles of empowering psychology students. Our goal is to provide guidance, resources, and hands-on learning experiences that support their academic and professional journeys." 
-          className={`mb-12 transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-        />
-        <div className="grid max-w-4xl mx-auto gap-12 md:grid-cols-2">
-          {founders.map((founder, index) => (
-            <FounderCard key={founder.name} founder={founder} index={index} isVisible={isVisible} />
-          ))}
+    <SectionWrapper className="bg-background py-16 md:py-24 lg:py-28">
+      <div ref={sectionRef} className="max-w-4xl mx-auto text-center">
+        <h2
+          className={cn(
+            "font-playful text-5xl md:text-6xl lg:text-7xl font-bold mb-8 md:mb-12 text-center tracking-tight text-foreground transition-all duration-700 ease-out",
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          )}
+        >
+          About the Founders
+        </h2>
+
+        <div className={cn("space-y-8 transition-all duration-700 ease-out delay-150", isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10')}>
+          {/* Single Combined Photo of Founders */}
+          <div className="relative w-full max-w-xl h-64 sm:h-72 md:h-80 mx-auto rounded-2xl overflow-hidden shadow-md border border-border">
+            <Image
+              src={combinedImage?.imageUrl || "https://images.unsplash.com/photo-1492366254240-43affaefc3e3?auto=format&fit=crop&q=80&w=1080"}
+              alt="Priyanka Surana & Lakshmi Rajesh - Founders of InsightEdge"
+              fill
+              className="object-cover"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-6">
+              <div className="text-left text-white">
+                <h3 className="font-headline text-xl md:text-2xl font-bold">Priyanka Surana & Lakshmi Rajesh</h3>
+                <p className="text-sm text-white/90 font-medium">Co-Founders, InsightEdge</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Three Paragraph Narrative for Founders */}
+          <div className="space-y-6 text-base md:text-lg lg:text-xl leading-relaxed font-body text-foreground/90 max-w-3xl mx-auto text-center">
+            <p>
+              If you had met us a few years ago, you would've probably found us doing what we still do best, asking questions. About people. About behaviour. About why some experiences stay with us while others fade away. Somewhere between lectures, internships, research projects, and countless conversations over coffee, we realised we shared the same dream: to make psychology feel less intimidating, less exclusive, and far more human.
+            </p>
+            <p>
+              We're still the same two people who ask too many questions, find meaning in everyday moments, and believe that understanding ourselves is one of the most valuable things we can do. Everything we create is simply an extension of those beliefs and the kind of impact we hope to leave behind.
+            </p>
+            <p>
+              Today, that curiosity has taken shape in our work. Priyanka is a Counselling Psychologist, currently specialising in Sports Psychology. Lakshmi is a Behavioural Researcher, currently pursuing her Master's in Counselling Psychology. Different paths, same thread, understanding people, a little more closely, every day.
+            </p>
+          </div>
         </div>
       </div>
     </SectionWrapper>
-  );
-}
-
-function FounderCard({ founder, index, isVisible }: { founder: typeof founders[0], index: number, isVisible: boolean }) {
-  const [cardVisible, setCardVisible] = useState(false);
-  const image = PlaceHolderImages.find(p => p.id === founder.image);
-
-  useEffect(() => {
-    if (isVisible) {
-      const timer = setTimeout(() => {
-        setCardVisible(true);
-      }, index * 200);
-      return () => clearTimeout(timer);
-    }
-  }, [isVisible, index]);
-
-  return (
-    <Card 
-      className={`text-center border-none shadow-none bg-transparent transition-all duration-500 ease-out ${
-        cardVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
-      }`}
-      style={{ transitionDelay: `${index * 200}ms` }}
-    >
-      <CardHeader>
-        {image && (
-          <div className={`relative w-40 h-40 mx-auto rounded-full overflow-hidden transition-all duration-500 ease-out ${
-            cardVisible ? 'scale-100 rotate-0' : 'scale-0 rotate-180'
-          }`} style={{ transitionDelay: `${index * 200 + 150}ms` }}>
-            <Image
-              src={image.imageUrl}
-              alt={image.description}
-              data-ai-hint={image.imageHint}
-              width={200}
-              height={200}
-              className="w-40 h-40 object-cover"
-              style={{
-                transform: founder.name === 'Priyanka Surana' 
-                  ? 'scale(1.15) translateX(-8px) translateY(10px)' 
-                  : 'scale(1.1)'
-              }}
-            />
-          </div>
-        )}
-        <CardTitle className="mt-4 font-headline text-2xl">{founder.name}</CardTitle>
-        <p className="text-sm text-muted-foreground">{founder.title}</p>
-      </CardHeader>
-      <CardContent>
-        <p className="text-muted-foreground">{founder.bio}</p>
-      </CardContent>
-    </Card>
   );
 }

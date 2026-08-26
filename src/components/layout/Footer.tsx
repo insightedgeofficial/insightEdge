@@ -19,11 +19,11 @@ export function Footer() {
       <div className="container py-12 lg:py-16">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-4 lg:grid-cols-5">
           <div className="md:col-span-4 lg:col-span-2">
-            <Link href="/" className="mb-4 inline-block">
-              <Logo variant="stacked" />
+            <Link href="/" className="mb-8 inline-block">
+              <Logo variant="horizontal" light className="justify-start scale-145 md:scale-165 origin-left" />
             </Link>
-            <p className="max-w-md text-sm text-morning-quiet/80">
-              Stay connected with psychology in practice.
+            <p className="max-w-md text-base md:text-lg font-medium text-morning-quiet/90">
+              Connecting Theory and Practice
             </p>
             <form className="mt-4 flex w-full max-w-sm items-center space-x-2">
               <Input type="email" placeholder="Email" className="bg-background"/>
@@ -32,13 +32,13 @@ export function Footer() {
           </div>
           
           <div>
-            <h3 className="font-headline text-lg font-semibold">Quick Links</h3>
-            <ul className="mt-4 space-y-2">
+            <h3 className="font-headline text-xl md:text-2xl font-bold">Quick Links</h3>
+            <ul className="mt-4 space-y-2.5">
               {footerLinks.quickLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-morning-quiet/80 transition-colors hover:text-morning-quiet"
+                    className="text-base md:text-lg text-morning-quiet/80 transition-colors hover:text-morning-quiet font-normal"
                   >
                     {link.label}
                   </Link>
@@ -48,20 +48,19 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-headline text-lg font-semibold">Contact</h3>
-            <div className="mt-4 space-y-2 text-sm text-morning-quiet/80">
+            <h3 className="font-headline text-xl md:text-2xl font-bold">Contact</h3>
+            <div className="mt-4 space-y-2.5 text-base md:text-lg text-morning-quiet/80 font-normal">
               <p>insightedge.contact@gmail.com</p>
               <p>+91 9840421104</p>
-              <p>+91 7041230123</p>
             </div>
           </div>
 
           <div>
-            <h3 className="font-headline text-lg font-semibold">Follow Us</h3>
-            <div className="mt-4 flex space-x-4">
+            <h3 className="font-headline text-xl md:text-2xl font-bold">Follow Us</h3>
+            <div className="mt-4 flex space-x-5">
               {socialLinks.map((social) => (
-                <Link key={social.name} href={social.href} target="_blank" rel="noopener noreferrer" className="text-morning-quiet/80 transition-colors hover:text-morning-quiet">
-                  <social.icon className="h-6 w-6" />
+                <Link key={social.name} href={social.href} target="_blank" rel="noopener noreferrer" className="text-morning-quiet/80 transition-colors hover:text-morning-quiet hover:scale-110 transform duration-200">
+                  <social.icon className="h-8 w-8 md:h-9 md:w-9" />
                   <span className="sr-only">{social.name}</span>
                 </Link>
               ))}
