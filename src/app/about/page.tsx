@@ -10,9 +10,9 @@ export default function AboutPage() {
   return (
     <div className="relative w-full overflow-x-hidden" style={{ backgroundColor: '#F9F7F2' }}>
       <div className="relative z-10 w-full">
-        {/* 1. Video Hero Header */}
+        {/* 1. Photo Banner */}
         <VideoSection />
-        
+
         {/* End-to-End Section Divider */}
         <div className="w-full border-b border-border/40" />
 

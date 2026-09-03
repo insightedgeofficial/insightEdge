@@ -7,7 +7,7 @@ import { Footer } from '@/components/layout/Footer';
 import { LoadingScreen } from '@/components/ui/LoadingScreen';
 
 export const metadata: Metadata = {
-  title: 'InsightEdge Hub',
+  title: 'InsightEdge',
   description: 'We bring psychology out of the textbooks - into classrooms, workplaces, and communities, through evidence-based workshops, therapy, and training experiences that drive real change.',
   icons: {
     icon: '/Logos/Icon (1).svg',

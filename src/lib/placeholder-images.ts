@@ -33,7 +33,7 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
   {
     id: "team-drishti",
     description: "Portrait of Drishti Agarwal",
-    imageUrl: "/team/Drishti.JPG",
+    imageUrl: "/team/Drishti.jpg",
     imageHint: "woman portrait"
   },
   {
@@ -45,7 +45,7 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
   {
     id: "team-rishi",
     description: "Portrait of Rishi Muthu Velkumar",
-    imageUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjM5MjU3NzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageUrl: "/team/Rishi.jpg",
     imageHint: "man portrait"
   },
   {
@@ -57,7 +57,7 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
   {
     id: "team-priyesh",
     description: "Portrait of Dr. Priyesh C.",
-    imageUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjM5MjU3NzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageUrl: "/team/Priyesh.jpg",
     imageHint: "man portrait"
   },
   {

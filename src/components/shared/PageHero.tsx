@@ -51,20 +51,20 @@ export function PageHero({
       </div>
 
       <motion.div
-        initial={{ opacity: 0, y: 32 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={{ y: 32 }}
+        animate={{ y: 0 }}
         transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
         className="container relative z-10 mx-auto px-4 md:px-6 lg:px-8 text-center"
       >
-        {/* Reusable radial gradient text overlay - unobtrusive, seamless fadeout with zero geometric edges */}
+        {/* Translucent panel for legible text over the background photo, especially on mobile */}
         <div
           className={cn(
-            "max-w-4xl mx-auto space-y-5 py-6 px-4 bg-[radial-gradient(ellipse_at_center,_rgba(24,61,44,0.28)_0%,_rgba(24,61,44,0.12)_45%,_rgba(24,61,44,0)_75%)]",
+            "max-w-4xl mx-auto space-y-5 py-8 px-5 sm:py-10 sm:px-10 rounded-3xl bg-still-ground/40 backdrop-blur-md border border-still-ground/10 shadow-xl",
             contentClassName
           )}
         >
           {typeof title === "string" ? (
-            <h1 className={cn("font-playful text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-morning-quiet [text-shadow:_0_2px_6px_rgba(0,0,0,0.35)]", titleClassName)}>
+            <h1 className={cn("font-playful text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-morning-quiet", titleClassName)}>
               {title}
             </h1>
           ) : (
@@ -73,31 +73,31 @@ export function PageHero({
 
           {description && (
             typeof description === "string" ? (
-              <p className={cn("max-w-3xl mx-auto text-lg md:text-xl lg:text-2xl leading-relaxed text-morning-quiet/95 font-medium [text-shadow:_0_1px_4px_rgba(0,0,0,0.35)]", descriptionClassName)}>
+              <p className={cn("max-w-3xl mx-auto text-lg md:text-xl lg:text-2xl leading-relaxed text-morning-quiet/95 font-medium", descriptionClassName)}>
                 {description}
               </p>
             ) : (
               description
             )
           )}
-        </div>
 
-        {children && (
-          <div className="mt-8 md:mt-10 flex flex-wrap items-center justify-center gap-4 md:gap-5">
-            {React.Children.map(children, (child, idx) => (
-              child ? (
-                <motion.div
-                  key={idx}
-                  whileHover={hoverPop.whileHover}
-                  transition={hoverPop.transition}
-                  className="inline-block"
-                >
-                  {child}
-                </motion.div>
-              ) : null
-            ))}
-          </div>
-        )}
+          {children && (
+            <div className="pt-2 md:pt-4 flex flex-wrap items-center justify-center gap-4 md:gap-5">
+              {React.Children.map(children, (child, idx) => (
+                child ? (
+                  <motion.div
+                    key={idx}
+                    whileHover={hoverPop.whileHover}
+                    transition={hoverPop.transition}
+                    className="inline-block"
+                  >
+                    {child}
+                  </motion.div>
+                ) : null
+              ))}
+            </div>
+          )}
+        </div>
       </motion.div>
     </section>
   );

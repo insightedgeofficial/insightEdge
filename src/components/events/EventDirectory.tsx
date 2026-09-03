@@ -28,7 +28,7 @@ export function EventDirectory() {
           className="inline-block"
         >
           <Button asChild size="lg" className="h-12 md:h-14 px-8 text-base md:text-lg font-bold bg-primary hover:bg-primary/90 text-primary-foreground shadow-md hover:shadow-lg rounded-xl">
-            <Link href="#">Explore Events & Registrations</Link>
+            <Link href="https://linktr.ee/InsightEdge.enquiries" target="_blank" rel="noopener noreferrer">Explore Events & Registrations</Link>
           </Button>
         </motion.div>
       </motion.div>

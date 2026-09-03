@@ -11,6 +11,15 @@ import { cn } from "@/lib/utils";
 // Filter team members - those with complete info
 const allTeamMembers = teamMembers.filter(m => m.name && m.role && m.tagline && m.bio);
 
+// Per-member fine-tuning for portrait framing, keyed by their image id.
+// Members not listed here keep the default top-anchored crop untouched.
+const imageFraming: Record<string, { objectPosition: string; scale?: number }> = {
+  'team-heena': { objectPosition: 'center 50%', scale: 1.6 },
+  'team-yashi': { objectPosition: 'center 45%', scale: 1.3 },
+  'team-drishti': { objectPosition: 'center 5%' },
+  'team-kiran': { objectPosition: 'center 8%' },
+};
+
 export function TeamGrid() {
   const { ref: sectionRef, isVisible } = useScrollAnimation({
     threshold: 0.1,
@@ -51,6 +60,7 @@ function AlternatingProfileCard({
 }) {
   const [cardVisible, setCardVisible] = useState(false);
   const image = PlaceHolderImages.find(p => p.id === member.image);
+  const framing = imageFraming[member.image];
 
   useEffect(() => {
     if (isVisible) {
@@ -90,7 +100,11 @@ function AlternatingProfileCard({
               data-ai-hint="person portrait"
               fill
               className="object-cover"
-              style={{ transform: 'scale(1.4)' }}
+              style={{
+                objectPosition: framing?.objectPosition ?? 'top',
+                transform: framing?.scale ? `scale(${framing.scale})` : undefined,
+                transformOrigin: framing?.objectPosition ?? 'top',
+              }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
           </div>
