@@ -87,8 +87,8 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
   {
     id: "founders-candid",
     description: "Candid photo of founders",
-    imageUrl: "https://images.unsplash.com/photo-1492366254240-43affaefc3e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx0ZWFtJTIwY29sbGFib3JhdGlvbnxlbnwwfHx8fDE3NjM5NzI2NTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    imageHint: "team collaboration"
+    imageUrl: "/Founders.jpg",
+    imageHint: "founders portrait"
   },
   {
     id: "testimonial-1",
