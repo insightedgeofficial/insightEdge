@@ -87,7 +87,7 @@ function PastEventCard({
                 "object-cover transition-transform duration-500 ease-out",
                 isHovered ? "scale-110" : "scale-100"
               )}
-              unoptimized
+              sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
               onError={() => setImageError(true)}
             />
             {/* Overlay */}

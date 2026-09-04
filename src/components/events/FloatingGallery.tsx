@@ -48,8 +48,8 @@ export function FloatingGallery() {
                   src={image.src}
                   alt="Event highlight"
                   fill
+                  sizes="(max-width: 768px) 50vw, 25vw"
                   className="object-cover hover:scale-110 transition-transform duration-500"
-                  unoptimized
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
               </div>
